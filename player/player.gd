@@ -38,14 +38,13 @@ func _physics_process(delta: float) -> void:
 
 	if Input.is_action_just_pressed("shoot") and bullet_scene:
 		var bullet = bullet_scene.instantiate()
+
+		# Bala nasce exatamente na posição atual do player
 		bullet.global_position = global_position
-		bullet.rotation = rotation
+		bullet.global_rotation = rotation + deg_to_rad(90)
+
 		get_tree().current_scene.add_child(bullet)
 		print("Bala disparada!")
-	#else:
-		#print("Não disparou - bullet_scene vazio?", bullet_scene == null)
-
-	current_position = global_position
 
 
 func _on_collision_shape_2d_child_entered_tree(node: Node) -> void:

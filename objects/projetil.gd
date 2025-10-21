@@ -8,7 +8,12 @@ func _ready() -> void:
 	direcao = Vector2.RIGHT.rotated(rotation)
 
 func _process(delta: float) -> void:
-	position += direcao * velocidade * delta
+	position -= direcao * velocidade * delta
 
 func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
 	queue_free()
+
+
+func _on_hitbox_area_entered(area: Area2D) -> void:
+	queue_free()
+	pass # Replace with function body.
