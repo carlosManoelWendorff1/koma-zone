@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://dh0v7yj6ps5vu"]
+
+[ext_resource type="Script" uid="uid://fgk8ttgnjvqc" path="res://npc/normal_zombie.gd" id="1_vu3f2"]
+[ext_resource type="Texture2D" uid="uid://c35x2787h6qqu" path="res://icon.svg" id="2_5oow6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aivg2"]
+size = Vector2(128, 128)
+
+[node name="NormalZombie" type="CharacterBody2D"]
+script = ExtResource("1_vu3f2")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_5oow6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_aivg2")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+debug_enabled = true
