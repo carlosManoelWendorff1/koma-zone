@@ -33,3 +33,8 @@ func _physics_process(delta: float) -> void:
 		print("Kills:", KillCount)
 	
 	current_position = global_position
+
+
+func _on_collision_shape_2d_child_entered_tree(node: Node) -> void:
+	print("entrou")
+	pass # Replace with function body.
