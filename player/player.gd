@@ -7,6 +7,10 @@ const SPEED = 300.0
 @export var money = 0
 @export var KillCount = 0
 var current_position: Vector2
+var player_health = 100
+
+func _ready() -> void:
+	$CanvasLayer/MarginContainer/VBoxContainer/vida.value = player_health
 
 func _physics_process(delta: float) -> void:
 	var input_vector = Vector2.ZERO

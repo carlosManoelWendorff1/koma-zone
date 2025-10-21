@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://dh0v7yj6ps5vu" path="res://npc/normal_zombie.tscn" id="2_0xm2m"]
 [ext_resource type="Texture2D" uid="uid://btnbg3rar2sof" path="res://tiles/Wall Tiles.png" id="3_h2yge"]
 [ext_resource type="Script" uid="uid://lm36rq8blobu" path="res://area_2d.gd" id="4_1bvp3"]
+[ext_resource type="PackedScene" uid="uid://curglin4n6dw" path="res://player/hud.tscn" id="4_1bvp3"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_1bvp3"]
 vertices = PackedVector2Array(1024.2969, 267.39063, 811.89844, 867.5781, -71.140625, -30, 1078.0313, -30)
@@ -485,6 +486,8 @@ position = Vector2(278, 475)
 
 [node name="Camera2D" type="Camera2D" parent="player"]
 zoom = Vector2(1.5, 1.5)
+
+[node name="CanvasLayer" parent="player" instance=ExtResource("4_1bvp3")]
 
 [node name="NormalZombie" parent="." node_paths=PackedStringArray("player") instance=ExtResource("2_0xm2m")]
 position = Vector2(314, 146)
