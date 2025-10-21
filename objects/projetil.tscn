@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://coc23oplj0jht"]
+
+[ext_resource type="Script" uid="uid://djmi7733yakbv" path="res://objects/projetil.gd" id="1_ghobk"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_rjk86"]
+specular_color = Color(0.86995006, 0.7200772, 7.70092e-07, 1)
+
+[node name="projetil" type="Sprite2D"]
+scale = Vector2(3.5, 2.5)
+texture = SubResource("CanvasTexture_rjk86")
+script = ExtResource("1_ghobk")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+rect = Rect2(-1, -1, 2, 2)
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

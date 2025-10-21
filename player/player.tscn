@@ -1,9 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://dchin36ajh5mm"]
+[gd_scene load_steps=9 format=3 uid="uid://dchin36ajh5mm"]
 
 [ext_resource type="Script" uid="uid://ucdklys53f8b" path="res://player/player.gd" id="1_rkbax"]
 [ext_resource type="Texture2D" uid="uid://cpynvr0us7ka4" path="res://sprites/survivor_pistol.png" id="2_rkbax"]
 [ext_resource type="Script" uid="uid://v5wrvpaabap5" path="res://scripts/hitbox.gd" id="3_g1dw6"]
 [ext_resource type="Script" uid="uid://cv7rm1bnmfbs" path="res://scripts/hurtbox.gd" id="4_yw30f"]
+[ext_resource type="PackedScene" uid="uid://coc23oplj0jht" path="res://objects/projetil.tscn" id="5_qjkh3"]
+[ext_resource type="PackedScene" uid="uid://hdfgmx6ie0p7" path="res://player/hud.tscn" id="6_g6k8r"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rkbax"]
 size = Vector2(30.5, 35)
@@ -38,3 +40,7 @@ metadata/_custom_type_script = "uid://cv7rm1bnmfbs"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
 position = Vector2(0, 10.5)
 shape = SubResource("RectangleShape2D_yw30f")
+
+[node name="projetil" parent="." instance=ExtResource("5_qjkh3")]
+
+[node name="CanvasLayer" parent="." instance=ExtResource("6_g6k8r")]

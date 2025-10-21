@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cvin82gwwhr70"]
+[gd_scene load_steps=7 format=3 uid="uid://cvin82gwwhr70"]
 
 [ext_resource type="PackedScene" uid="uid://dchin36ajh5mm" path="res://player/player.tscn" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://dh0v7yj6ps5vu" path="res://npc/normal_zombie.tscn" id="2_0xm2m"]
@@ -482,8 +482,6 @@ position = Vector2(278, 475)
 
 [node name="Camera2D" type="Camera2D" parent="player"]
 zoom = Vector2(1.5, 1.5)
-
-[node name="CanvasLayer" parent="player" instance=ExtResource("4_1bvp3")]
 
 [node name="NormalZombie" parent="." node_paths=PackedStringArray("player") instance=ExtResource("2_0xm2m")]
 position = Vector2(314, 146)
