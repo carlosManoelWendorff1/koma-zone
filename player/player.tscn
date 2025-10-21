@@ -1,10 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://dchin36ajh5mm"]
+[gd_scene load_steps=7 format=3 uid="uid://dchin36ajh5mm"]
 
 [ext_resource type="Script" uid="uid://ucdklys53f8b" path="res://player/player.gd" id="1_rkbax"]
 [ext_resource type="Texture2D" uid="uid://cpynvr0us7ka4" path="res://sprites/survivor_pistol.png" id="2_rkbax"]
+[ext_resource type="Script" uid="uid://v5wrvpaabap5" path="res://scripts/hitbox.gd" id="3_g1dw6"]
+[ext_resource type="Script" uid="uid://cv7rm1bnmfbs" path="res://scripts/hurtbox.gd" id="4_yw30f"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rkbax"]
 size = Vector2(30.5, 35)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yw30f"]
+size = Vector2(58, 55)
 
 [node name="player" type="CharacterBody2D"]
 script = ExtResource("1_rkbax")
@@ -15,3 +20,21 @@ texture = ExtResource("2_rkbax")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 11)
 shape = SubResource("RectangleShape2D_rkbax")
+
+[node name="Hitbox" type="Area2D" parent="."]
+script = ExtResource("3_g1dw6")
+damage = 10
+metadata/_custom_type_script = "uid://v5wrvpaabap5"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2(0, 10.5)
+shape = SubResource("RectangleShape2D_yw30f")
+
+[node name="HurtBox" type="Area2D" parent="."]
+collision_mask = 2
+script = ExtResource("4_yw30f")
+metadata/_custom_type_script = "uid://cv7rm1bnmfbs"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
+position = Vector2(0, 10.5)
+shape = SubResource("RectangleShape2D_yw30f")

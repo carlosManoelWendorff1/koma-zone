@@ -6,6 +6,7 @@ const SPEED = 100.0
 @export var health: int
 @onready var nav_agent: NavigationAgent2D = $NavigationAgent2D
 
+var hitbox = Hitbox
 var alive: bool = true
 
 func _ready() -> void:
