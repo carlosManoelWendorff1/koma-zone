@@ -3,7 +3,7 @@ extends CharacterBody2D
 const SPEED = 100.0 
 
 @export var player: Node2D
-@export var health: int
+@export var health: int = 100
 @onready var nav_agent: NavigationAgent2D = $NavigationAgent2D
 
 var hitbox = Hitbox

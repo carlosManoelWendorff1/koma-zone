@@ -6,16 +6,22 @@ const SPEED = 300.0
 
 @export var money = 0
 @export var KillCount = 0
+@export var health = 100
+
+var alive: bool = true
 var bullet_scene = preload("res://objects/projetil.tscn")
 var current_position: Vector2
-var player_health = 100
 
 func _ready() -> void:
-	$CanvasLayer/MarginContainer/VBoxContainer/vida.value = player_health
+	$CanvasLayer/MarginContainer/VBoxContainer/vida.value = health
 
 func _physics_process(delta: float) -> void:
 	var input_vector = Vector2.ZERO
-
+	
+	if health <= 0:
+		die()
+		return
+	
 	# Captura o input das setas ou teclas W/A/S/D
 	input_vector.x = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
 	input_vector.y = Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
@@ -36,8 +42,8 @@ func _physics_process(delta: float) -> void:
 		bullet.rotation = rotation
 		get_tree().current_scene.add_child(bullet)
 		print("Bala disparada!")
-	else:
-		print("Não disparou - bullet_scene vazio?", bullet_scene == null)
+	#else:
+		#print("Não disparou - bullet_scene vazio?", bullet_scene == null)
 
 	current_position = global_position
 
@@ -45,3 +51,11 @@ func _physics_process(delta: float) -> void:
 func _on_collision_shape_2d_child_entered_tree(node: Node) -> void:
 	print("entrou")
 	pass # Replace with function body.
+
+func die() -> void:
+	if not alive: return
+	print("player morreu!")
+	alive = false
+
+func take_damage(damage: int) -> void:
+	health -= damage

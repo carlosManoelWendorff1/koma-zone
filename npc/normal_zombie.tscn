@@ -13,7 +13,6 @@ size = Vector2(150, 153)
 
 [node name="NormalZombie" type="CharacterBody2D"]
 script = ExtResource("1_vu3f2")
-health = 100
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_5oow6")
@@ -34,6 +33,7 @@ shape = SubResource("RectangleShape2D_31jnu")
 [node name="Hitbox" type="Area2D" parent="."]
 collision_layer = 2
 script = ExtResource("4_aivg2")
+damage = 100
 metadata/_custom_type_script = "uid://v5wrvpaabap5"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
