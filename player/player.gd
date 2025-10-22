@@ -3,12 +3,15 @@ extends CharacterBody2D
 class_name Player
 
 const SPEED = 300.0
+
 @export var money = 0
 @export var KillCount = 0
 @export var health = 100
+@export var fire_rate: float = 0.3  # 🔹 Tempo (em segundos) entre tiros
 
 var alive: bool = true
 var shooting: bool = false
+var can_shoot: bool = true  # 🔹 Controla se o player pode atirar
 var bullet_scene = preload("res://objects/projetil.tscn")
 
 func _ready() -> void:
@@ -44,11 +47,12 @@ func _physics_process(delta: float) -> void:
 	var direction = mouse_pos - global_position
 	rotation = direction.angle() + deg_to_rad(90)
 
-	# Disparo
-	if Input.is_action_just_pressed("shoot") and bullet_scene and alive:
+	# 🔫 Disparo com cooldown
+	if Input.is_action_pressed("shoot") and bullet_scene and alive and can_shoot:
 		shoot()
 
 func shoot() -> void:
+	can_shoot = false
 	shooting = true
 	$fire.emitting = true
 	$AnimatedSprite2D.play("shot")
@@ -59,9 +63,17 @@ func shoot() -> void:
 	bullet.global_rotation = muzzle.global_rotation + deg_to_rad(90)
 	get_tree().current_scene.add_child(bullet)
 
-	# Espera a animação de tiro terminar e volta ao movimento normal
+	# 🔹 Create tracer for the bullet
+	var tracer_scene = preload("res://objects/bullet_tracer.tscn")
+	var tracer = tracer_scene.instantiate()
+	tracer.target = bullet
+	get_tree().current_scene.add_child(tracer)
+
 	await $AnimatedSprite2D.animation_finished
 	shooting = false
+
+	await get_tree().create_timer(fire_rate).timeout
+	can_shoot = true
 
 func die() -> void:
 	if not alive:
