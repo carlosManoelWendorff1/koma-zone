@@ -1,4 +1,4 @@
-[gd_scene load_steps=84 format=4 uid="uid://cjee6x54wvfd2"]
+[gd_scene load_steps=86 format=4 uid="uid://cjee6x54wvfd2"]
 
 [ext_resource type="Texture2D" uid="uid://bg5xyhkvpqpf8" path="res://sprites/zombie-tds-tilesets-soil-stones-plants-water-destroyed-cars/Tiles&Details/PNG/Ground_tiles/ground_tiles_0000_Layer-50.png" id="1_g52lx"]
 [ext_resource type="Texture2D" uid="uid://dr8fj5ecf1w5r" path="res://sprites/zombie-tds-tilesets-soil-stones-plants-water-destroyed-cars/Objects/PNG/Objects_outside/objects_outside_0008_Layer-9.png" id="1_nrq6j"]
@@ -33,6 +33,7 @@
 [ext_resource type="Texture2D" uid="uid://dajp55xdkuh3o" path="res://sprites/zombie-tds-tilesets-soil-stones-plants-water-destroyed-cars/Tiles&Details/PNG/Asphalt_tiles/asphalt_tiles_0012_Layer-0.png" id="26_foqjq"]
 [ext_resource type="Texture2D" uid="uid://ba0o8qv3caxwn" path="res://sprites/wall.png" id="27_bb16k"]
 [ext_resource type="PackedScene" uid="uid://ci3ql3rd41d4n" path="res://objects/GasTank/gas_tank.tscn" id="32_0yspx"]
+[ext_resource type="PackedScene" uid="uid://daj4hcq1twvkv" path="res://objects/door.tscn" id="33_pm7ge"]
 [ext_resource type="Texture2D" uid="uid://icqh7hfcljvx" path="res://sprites/zombie-tds-tilesets-soil-stones-plants-water-destroyed-cars/Objects/PNG/Objects_outside/Helicopter.png" id="34_45gh2"]
 [ext_resource type="Texture2D" uid="uid://bp7j3yi5lwj3m" path="res://sprites/zombie-tds-tilesets-soil-stones-plants-water-destroyed-cars/Objects/PNG/Objects_outside/objects_outside_0002_Layer-3.png" id="35_go70q"]
 [ext_resource type="Texture2D" uid="uid://ctlf70suavbb8" path="res://sprites/zombie-tds-tilesets-soil-stones-plants-water-destroyed-cars/Objects/PNG/Objects_outside/objects_outside_0012_Layer-13.png" id="36_e05rd"]
@@ -53,6 +54,7 @@
 [ext_resource type="Texture2D" uid="uid://dx8gf4bl6bi5c" path="res://sprites/zombie-tds-tilesets-soil-stones-plants-water-destroyed-cars/Tiles&Details/PNG/Cracks_asphalt/cracks_asphalt_0000_Layer-4.png" id="51_yrkc0"]
 [ext_resource type="Texture2D" uid="uid://8jkheoo5pnil" path="res://sprites/zombie-tds-tilesets-soil-stones-plants-water-destroyed-cars/Tiles&Details/PNG/Cracks_asphalt/cracks_asphalt_0002_Layer-2.png" id="52_g7qnt"]
 [ext_resource type="Texture2D" uid="uid://dhlptcvuh5q6a" path="res://sprites/zombie-tds-tilesets-soil-stones-plants-water-destroyed-cars/Tiles&Details/PNG/Cracks_asphalt/cracks_asphalt_0001_Layer-1.png" id="53_ksqha"]
+[ext_resource type="PackedScene" uid="uid://cvin82gwwhr70" path="res://main.tscn" id="55_go70q"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_phpvg"]
 texture = ExtResource("1_nrq6j")
@@ -3829,3 +3831,7 @@ texture = ExtResource("52_g7qnt")
 [node name="CracksAsphalt0001Layer1" type="Sprite2D" parent="."]
 position = Vector2(-1741, 495)
 texture = ExtResource("53_ksqha")
+
+[node name="Door" parent="." instance=ExtResource("33_pm7ge")]
+position = Vector2(2571, 2161)
+scene_path = ExtResource("55_go70q")

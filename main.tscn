@@ -1,9 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://cvin82gwwhr70"]
+[gd_scene load_steps=8 format=3 uid="uid://cvin82gwwhr70"]
 
 [ext_resource type="PackedScene" uid="uid://dchin36ajh5mm" path="res://player/player.tscn" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://dh0v7yj6ps5vu" path="res://npc/normal_zombie.tscn" id="2_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://cx632qaat2rra" path="res://npc/dead_zombie.tscn" id="3_1bvp3"]
+[ext_resource type="PackedScene" uid="uid://daj4hcq1twvkv" path="res://objects/door.tscn" id="5_7mycd"]
 [ext_resource type="PackedScene" uid="uid://ci3ql3rd41d4n" path="res://objects/GasTank/gas_tank.tscn" id="5_lquwl"]
+[ext_resource type="PackedScene" uid="uid://cjee6x54wvfd2" path="res://tutorial.tscn" id="6_7mycd"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_1bvp3"]
 vertices = PackedVector2Array(1024.2969, 267.39063, 811.89844, 867.5781, -71.140625, -30, 1078.0313, -30)
@@ -28,3 +30,7 @@ position = Vector2(28, 535)
 
 [node name="Camera2D" type="Camera2D" parent="player"]
 zoom = Vector2(1.5, 1.5)
+
+[node name="Door" parent="." instance=ExtResource("5_7mycd")]
+position = Vector2(142, 382)
+scene_path = ExtResource("6_7mycd")
