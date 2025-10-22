@@ -23,8 +23,8 @@
 [ext_resource type="Texture2D" uid="uid://bkndovqqhjpg2" path="res://sprites/zombie-tds-main-characters/Characters/PNG_Bodyparts&Animations/PNG Animations/Man/Walk_gun/Walk_gun_004.png" id="21_pnw6m"]
 [ext_resource type="Texture2D" uid="uid://bopgmy0nynln5" path="res://sprites/zombie-tds-main-characters/Characters/PNG_Bodyparts&Animations/PNG Animations/Man/Walk_gun/Walk_gun_005.png" id="22_1so5t"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_rkbax"]
-size = Vector2(30.5, 35)
+[sub_resource type="CircleShape2D" id="CircleShape2D_bjvpn"]
+radius = 19.75
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yw30f"]
 size = Vector2(58, 55)
@@ -116,7 +116,7 @@ animations = [{
 script = ExtResource("1_rkbax")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_rkbax")
+shape = SubResource("CircleShape2D_bjvpn")
 
 [node name="Hitbox" type="Area2D" parent="."]
 script = ExtResource("3_g1dw6")
