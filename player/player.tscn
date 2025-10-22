@@ -1,7 +1,6 @@
-[gd_scene load_steps=27 format=3 uid="uid://dchin36ajh5mm"]
+[gd_scene load_steps=25 format=3 uid="uid://dchin36ajh5mm"]
 
 [ext_resource type="Script" uid="uid://ucdklys53f8b" path="res://player/player.gd" id="1_rkbax"]
-[ext_resource type="Script" uid="uid://v5wrvpaabap5" path="res://scripts/hitbox.gd" id="3_g1dw6"]
 [ext_resource type="Script" uid="uid://cv7rm1bnmfbs" path="res://scripts/hurtbox.gd" id="4_yw30f"]
 [ext_resource type="Texture2D" uid="uid://dfo1dyb67apr0" path="res://sprites/zombie-tds-main-characters/Characters/PNG_Bodyparts&Animations/PNG Animations/Man/Death/death_0000_Man.png" id="6_bjvpn"]
 [ext_resource type="PackedScene" uid="uid://hdfgmx6ie0p7" path="res://player/hud.tscn" id="6_g6k8r"]
@@ -24,8 +23,6 @@
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bjvpn"]
 radius = 19.75
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_s7qer"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_g4c7l"]
 
@@ -113,21 +110,11 @@ animations = [{
 }]
 
 [node name="player" type="CharacterBody2D"]
-scale = Vector2(0.5, 0.5)
+scale = Vector2(0.4, 0.4)
 script = ExtResource("1_rkbax")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_bjvpn")
-
-[node name="Hitbox" type="Area2D" parent="."]
-script = ExtResource("3_g1dw6")
-damage = 10
-metadata/_custom_type_script = "uid://v5wrvpaabap5"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
-position = Vector2(-5.9999847, 74.000015)
-scale = Vector2(14, 12.564)
-shape = SubResource("CircleShape2D_s7qer")
 
 [node name="HurtBox" type="Area2D" parent="."]
 position = Vector2(-2, -17)

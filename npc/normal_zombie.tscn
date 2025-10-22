@@ -28,8 +28,8 @@
 [ext_resource type="Texture2D" uid="uid://bl2frf785qgbc" path="res://sprites/tds-monster-character-sprites/Monsters/PNG Animations/3LVL/Zpmbie_big_head/Death/death_004.png" id="17_0y3na"]
 [ext_resource type="Texture2D" uid="uid://c6gtpr2gw0jex" path="res://sprites/tds-monster-character-sprites/Monsters/PNG Animations/3LVL/Zpmbie_big_head/Death/death_005.png" id="18_q3mcj"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_aivg2"]
-size = Vector2(94.686615, 98.139626)
+[sub_resource type="CircleShape2D" id="CircleShape2D_oibk3"]
+radius = 30.02
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_31jnu"]
 size = Vector2(150, 153)
@@ -126,15 +126,16 @@ animations = [{
 
 [node name="NormalZombie" type="CharacterBody2D"]
 position = Vector2(-2, 3)
-scale = Vector2(0.7, 0.7)
+scale = Vector2(0.5, 0.5)
 script = ExtResource("1_vu3f2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-7.6293945e-06, 0)
 scale = Vector2(2.112231, 1.7574884)
-shape = SubResource("RectangleShape2D_aivg2")
+shape = SubResource("CircleShape2D_oibk3")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+radius = 25.46
 debug_enabled = true
 
 [node name="HurtBox" type="Area2D" parent="."]
