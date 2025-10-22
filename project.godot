@@ -15,6 +15,10 @@ run/main_scene="uid://cvin82gwwhr70"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[dotnet]
+
+project/assembly_name="KomaZone"
+
 [input]
 
 shoot={
