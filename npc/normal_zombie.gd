@@ -55,7 +55,13 @@ func die() -> void:
 	print("zombie morreu!")
 	velocity = Vector2.ZERO
 	$AnimatedSprite2D.play("death")
-
+	
+# 🔹 Disable attack hitbox
+	$Hitbox/CollisionShape2D.disabled = true
+	
+	# 🔹 Disable main collision to remove body collisions
+	$CollisionShape2D.disabled = true
+	
 	await $AnimatedSprite2D.animation_finished
 	$Timer.start()	
 	await $Timer.timeout
@@ -66,6 +72,7 @@ func die() -> void:
 		get_parent().add_child(dead)
 
 	queue_free()
+
 
 func take_damage(damage: int) -> void:
 	if not alive:

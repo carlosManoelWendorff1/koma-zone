@@ -144,4 +144,5 @@ dead_scene = ExtResource("4_5mrt3")
 
 [node name="EnemySpawner" parent="." instance=ExtResource("5_rwowx")]
 position = Vector2(1357, 163)
+interval = 15.0
 enemy_scene = ExtResource("3_5mrt3")
