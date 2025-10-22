@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://dchin36ajh5mm"]
+[gd_scene load_steps=28 format=3 uid="uid://dchin36ajh5mm"]
 
 [ext_resource type="Script" uid="uid://ucdklys53f8b" path="res://player/player.gd" id="1_rkbax"]
 [ext_resource type="Script" uid="uid://v5wrvpaabap5" path="res://scripts/hitbox.gd" id="3_g1dw6"]
@@ -26,8 +26,9 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_bjvpn"]
 radius = 19.75
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_yw30f"]
-size = Vector2(58, 55)
+[sub_resource type="CircleShape2D" id="CircleShape2D_s7qer"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_g4c7l"]
 
 [sub_resource type="Gradient" id="Gradient_g6k8r"]
 colors = PackedColorArray(1, 1, 1, 1, 0.972549, 0.5882353, 0, 1)
@@ -113,6 +114,7 @@ animations = [{
 }]
 
 [node name="player" type="CharacterBody2D"]
+scale = Vector2(0.5, 0.5)
 script = ExtResource("1_rkbax")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -124,24 +126,28 @@ damage = 10
 metadata/_custom_type_script = "uid://v5wrvpaabap5"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
-position = Vector2(0, 10.5)
-shape = SubResource("RectangleShape2D_yw30f")
+position = Vector2(-5.9999847, 74.000015)
+scale = Vector2(14, 12.564)
+shape = SubResource("CircleShape2D_s7qer")
 
 [node name="HurtBox" type="Area2D" parent="."]
+position = Vector2(-2, -17)
 collision_mask = 2
 script = ExtResource("4_yw30f")
 metadata/_custom_type_script = "uid://cv7rm1bnmfbs"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
-position = Vector2(0, 10.5)
-shape = SubResource("RectangleShape2D_yw30f")
+position = Vector2(-3.999998, 86)
+scale = Vector2(14, -13.15)
+shape = SubResource("CircleShape2D_g4c7l")
 
 [node name="projetil" parent="." instance=ExtResource("5_qjkh3")]
+position = Vector2(58, -188)
 
 [node name="CanvasLayer" parent="." instance=ExtResource("6_g6k8r")]
 
 [node name="fire" type="CPUParticles2D" parent="."]
-position = Vector2(14, -13)
+position = Vector2(60, -187)
 emitting = false
 amount = 100
 lifetime = 0.2
@@ -156,10 +162,10 @@ initial_velocity_max = 100.0
 color_ramp = SubResource("Gradient_g6k8r")
 
 [node name="GunMuzzle" type="Marker2D" parent="."]
-position = Vector2(19, -60)
+position = Vector2(58, -188)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -1)
 rotation = 3.1415927
-scale = Vector2(0.2, 0.2)
 sprite_frames = SubResource("SpriteFrames_55jnj")
-animation = &"death"
+animation = &"idle_gun"

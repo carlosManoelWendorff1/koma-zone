@@ -29,7 +29,7 @@
 [ext_resource type="Texture2D" uid="uid://c6gtpr2gw0jex" path="res://sprites/tds-monster-character-sprites/Monsters/PNG Animations/3LVL/Zpmbie_big_head/Death/death_005.png" id="18_q3mcj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aivg2"]
-size = Vector2(128, 128)
+size = Vector2(94.686615, 98.139626)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_31jnu"]
 size = Vector2(150, 153)
@@ -125,16 +125,20 @@ animations = [{
 }]
 
 [node name="NormalZombie" type="CharacterBody2D"]
+position = Vector2(-2, 3)
+scale = Vector2(0.7, 0.7)
 script = ExtResource("1_vu3f2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-scale = Vector2(0.3, 0.3)
+position = Vector2(-7.6293945e-06, 0)
+scale = Vector2(2.112231, 1.7574884)
 shape = SubResource("RectangleShape2D_aivg2")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 debug_enabled = true
 
 [node name="HurtBox" type="Area2D" parent="."]
+scale = Vector2(3.160003, 2.9600003)
 script = ExtResource("3_5oow6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
@@ -150,11 +154,10 @@ metadata/_custom_type_script = "uid://v5wrvpaabap5"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
 position = Vector2(0, 0.5)
-scale = Vector2(0.3, 0.3)
 shape = SubResource("RectangleShape2D_31jnu")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-scale = Vector2(0.2, 0.2)
+scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_arver")
 animation = &"attack"
 
