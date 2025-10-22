@@ -1,9 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://cvin82gwwhr70"]
+[gd_scene load_steps=8 format=3 uid="uid://cvin82gwwhr70"]
 
 [ext_resource type="PackedScene" uid="uid://dchin36ajh5mm" path="res://player/player.tscn" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://dh0v7yj6ps5vu" path="res://npc/normal_zombie.tscn" id="2_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://cx632qaat2rra" path="res://npc/dead_zombie.tscn" id="3_1bvp3"]
 [ext_resource type="Texture2D" uid="uid://btnbg3rar2sof" path="res://tiles/Wall Tiles.png" id="3_h2yge"]
-[ext_resource type="PackedScene" uid="uid://hdfgmx6ie0p7" path="res://player/hud.tscn" id="4_1bvp3"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_1bvp3"]
 vertices = PackedVector2Array(1024.2969, 267.39063, 811.89844, 867.5781, -71.140625, -30, 1078.0313, -30)
@@ -486,6 +486,7 @@ zoom = Vector2(1.5, 1.5)
 [node name="NormalZombie" parent="." node_paths=PackedStringArray("player") instance=ExtResource("2_0xm2m")]
 position = Vector2(314, 146)
 player = NodePath("../player")
+dead_scene = ExtResource("3_1bvp3")
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
 position = Vector2(-291, 67)
