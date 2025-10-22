@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dchin36ajh5mm"]
+[gd_scene load_steps=10 format=3 uid="uid://dchin36ajh5mm"]
 
 [ext_resource type="Script" uid="uid://ucdklys53f8b" path="res://player/player.gd" id="1_rkbax"]
 [ext_resource type="Texture2D" uid="uid://cpynvr0us7ka4" path="res://sprites/survivor_pistol.png" id="2_rkbax"]
@@ -12,6 +12,9 @@ size = Vector2(30.5, 35)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yw30f"]
 size = Vector2(58, 55)
+
+[sub_resource type="Gradient" id="Gradient_g6k8r"]
+colors = PackedColorArray(1, 1, 1, 1, 0.972549, 0.5882353, 0, 1)
 
 [node name="player" type="CharacterBody2D"]
 script = ExtResource("1_rkbax")
@@ -43,3 +46,21 @@ shape = SubResource("RectangleShape2D_yw30f")
 [node name="projetil" parent="." instance=ExtResource("5_qjkh3")]
 
 [node name="CanvasLayer" parent="." instance=ExtResource("6_g6k8r")]
+
+[node name="fire" type="CPUParticles2D" parent="."]
+position = Vector2(14, -13)
+emitting = false
+amount = 100
+lifetime = 0.2
+one_shot = true
+explosiveness = 1.0
+particle_flag_align_y = true
+direction = Vector2(0, -1)
+spread = 120.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 50.0
+initial_velocity_max = 100.0
+color_ramp = SubResource("Gradient_g6k8r")
+
+[node name="GunMuzzle" type="Marker2D" parent="."]
+position = Vector2(14, -13)

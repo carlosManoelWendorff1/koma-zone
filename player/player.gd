@@ -37,11 +37,14 @@ func _physics_process(delta: float) -> void:
 	rotation = direction.angle() + deg_to_rad(90)
 
 	if Input.is_action_just_pressed("shoot") and bullet_scene:
+		$fire.emitting = true
 		var bullet = bullet_scene.instantiate()
 
-		# Bala nasce exatamente na posição atual do player
-		bullet.global_position = global_position
-		bullet.global_rotation = rotation + deg_to_rad(90)
+		# Pegamos a posição do Marker2D (cano da arma)
+		var muzzle = $GunMuzzle
+		# A bala nasce no cano da arma, apontando na mesma direção do player
+		bullet.global_position = muzzle.global_position
+		bullet.global_rotation = muzzle.global_rotation + deg_to_rad(90)
 
 		get_tree().current_scene.add_child(bullet)
 		print("Bala disparada!")
