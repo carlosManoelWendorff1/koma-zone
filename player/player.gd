@@ -55,6 +55,7 @@ func die() -> void:
 	if not alive: return
 	print("player morreu!")
 	alive = false
+	get_tree().change_scene_to_file("res://Menu/game_over.tscn")
 
 func take_damage(damage: int) -> void:
 	health -= damage
