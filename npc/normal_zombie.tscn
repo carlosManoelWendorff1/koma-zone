@@ -1,9 +1,32 @@
-[gd_scene load_steps=7 format=3 uid="uid://dh0v7yj6ps5vu"]
+[gd_scene load_steps=31 format=3 uid="uid://dh0v7yj6ps5vu"]
 
 [ext_resource type="Script" uid="uid://fgk8ttgnjvqc" path="res://npc/normal_zombie.gd" id="1_vu3f2"]
-[ext_resource type="Texture2D" uid="uid://c35x2787h6qqu" path="res://icon.svg" id="2_5oow6"]
 [ext_resource type="Script" uid="uid://cv7rm1bnmfbs" path="res://scripts/hurtbox.gd" id="3_5oow6"]
 [ext_resource type="Script" uid="uid://v5wrvpaabap5" path="res://scripts/hitbox.gd" id="4_aivg2"]
+[ext_resource type="Texture2D" uid="uid://c3olq2aax6arn" path="res://sprites/tds-monster-character-sprites/Monsters/PNG Animations/3LVL/Zpmbie_big_head/Attack/Attack_000.png" id="4_oibk3"]
+[ext_resource type="Texture2D" uid="uid://dbbjh4i4v7m30" path="res://sprites/tds-monster-character-sprites/Monsters/PNG Animations/3LVL/Zpmbie_big_head/Walk/walk_000.png" id="4_so1cp"]
+[ext_resource type="Texture2D" uid="uid://bxvq6dlmy1lnu" path="res://sprites/tds-monster-character-sprites/Monsters/PNG Animations/3LVL/Zpmbie_big_head/Walk/walk_001.png" id="5_egl73"]
+[ext_resource type="Texture2D" uid="uid://2tje37ljlbhb" path="res://sprites/tds-monster-character-sprites/Monsters/PNG Animations/3LVL/Zpmbie_big_head/Attack/Attack_001.png" id="5_erkbe"]
+[ext_resource type="Texture2D" uid="uid://bphc6l7jy451c" path="res://sprites/tds-monster-character-sprites/Monsters/PNG Animations/3LVL/Zpmbie_big_head/Attack/Attack_002.png" id="6_cx8r5"]
+[ext_resource type="Texture2D" uid="uid://btfaoginlfwht" path="res://sprites/tds-monster-character-sprites/Monsters/PNG Animations/3LVL/Zpmbie_big_head/Walk/walk_002.png" id="6_rqf2b"]
+[ext_resource type="Texture2D" uid="uid://lwfvjqw700nx" path="res://sprites/tds-monster-character-sprites/Monsters/PNG Animations/3LVL/Zpmbie_big_head/Attack/Attack_003.png" id="7_n186c"]
+[ext_resource type="Texture2D" uid="uid://cmemo2lhegk3j" path="res://sprites/tds-monster-character-sprites/Monsters/PNG Animations/3LVL/Zpmbie_big_head/Walk/walk_003.png" id="7_up8ic"]
+[ext_resource type="Texture2D" uid="uid://dtit4tkla2ths" path="res://sprites/tds-monster-character-sprites/Monsters/PNG Animations/3LVL/Zpmbie_big_head/Walk/walk_004.png" id="8_1cvkl"]
+[ext_resource type="Texture2D" uid="uid://cl3jetldou26c" path="res://sprites/tds-monster-character-sprites/Monsters/PNG Animations/3LVL/Zpmbie_big_head/Attack/Attack_004.png" id="8_ldipp"]
+[ext_resource type="Texture2D" uid="uid://wrdljssqbx8f" path="res://sprites/tds-monster-character-sprites/Monsters/PNG Animations/3LVL/Zpmbie_big_head/Attack/Attack_005.png" id="9_o358e"]
+[ext_resource type="Texture2D" uid="uid://ca8u2l5rydgga" path="res://sprites/tds-monster-character-sprites/Monsters/PNG Animations/3LVL/Zpmbie_big_head/Walk/walk_005.png" id="9_owyrf"]
+[ext_resource type="Texture2D" uid="uid://b01w6trd3wa2r" path="res://sprites/tds-monster-character-sprites/Monsters/PNG Animations/3LVL/Zpmbie_big_head/Walk/walk_006.png" id="10_qd0r7"]
+[ext_resource type="Texture2D" uid="uid://dys6bi7feupk4" path="res://sprites/tds-monster-character-sprites/Monsters/PNG Animations/3LVL/Zpmbie_big_head/Attack/Attack_006.png" id="10_yf1my"]
+[ext_resource type="Texture2D" uid="uid://bah6agmrrqhm8" path="res://sprites/tds-monster-character-sprites/Monsters/PNG Animations/3LVL/Zpmbie_big_head/Attack/Attack_007.png" id="11_8bopj"]
+[ext_resource type="Texture2D" uid="uid://bcroixdf0vxh" path="res://sprites/tds-monster-character-sprites/Monsters/PNG Animations/3LVL/Zpmbie_big_head/Walk/walk_007.png" id="11_qtxiy"]
+[ext_resource type="Texture2D" uid="uid://dy8ikl2d1usvs" path="res://sprites/tds-monster-character-sprites/Monsters/PNG Animations/3LVL/Zpmbie_big_head/Attack/Attack_008.png" id="12_jc1w0"]
+[ext_resource type="Texture2D" uid="uid://vwqio5p24qjy" path="res://sprites/tds-monster-character-sprites/Monsters/PNG Animations/3LVL/Zpmbie_big_head/Walk/walk_008.png" id="12_w5gq7"]
+[ext_resource type="Texture2D" uid="uid://bi4g8uwmljoqn" path="res://sprites/tds-monster-character-sprites/Monsters/PNG Animations/3LVL/Zpmbie_big_head/Death/death_000.png" id="13_bsgk5"]
+[ext_resource type="Texture2D" uid="uid://2yse8we1mfmd" path="res://sprites/tds-monster-character-sprites/Monsters/PNG Animations/3LVL/Zpmbie_big_head/Death/death_001.png" id="14_msafp"]
+[ext_resource type="Texture2D" uid="uid://c0c3aghmeqy5u" path="res://sprites/tds-monster-character-sprites/Monsters/PNG Animations/3LVL/Zpmbie_big_head/Death/death_002.png" id="15_ja2hb"]
+[ext_resource type="Texture2D" uid="uid://b2pkhtb6nwxmi" path="res://sprites/tds-monster-character-sprites/Monsters/PNG Animations/3LVL/Zpmbie_big_head/Death/death_003.png" id="16_r2svm"]
+[ext_resource type="Texture2D" uid="uid://bl2frf785qgbc" path="res://sprites/tds-monster-character-sprites/Monsters/PNG Animations/3LVL/Zpmbie_big_head/Death/death_004.png" id="17_0y3na"]
+[ext_resource type="Texture2D" uid="uid://c6gtpr2gw0jex" path="res://sprites/tds-monster-character-sprites/Monsters/PNG Animations/3LVL/Zpmbie_big_head/Death/death_005.png" id="18_q3mcj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aivg2"]
 size = Vector2(128, 128)
@@ -11,13 +34,101 @@ size = Vector2(128, 128)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_31jnu"]
 size = Vector2(150, 153)
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_arver"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_oibk3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_erkbe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_cx8r5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_n186c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_ldipp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_o358e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_yf1my")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_8bopj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_jc1w0")
+}],
+"loop": false,
+"name": &"attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_bsgk5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_msafp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_ja2hb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_r2svm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_0y3na")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_q3mcj")
+}],
+"loop": false,
+"name": &"death",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_so1cp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_egl73")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_rqf2b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_up8ic")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_1cvkl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_owyrf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_qd0r7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_qtxiy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_w5gq7")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
 [node name="NormalZombie" type="CharacterBody2D"]
 script = ExtResource("1_vu3f2")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_5oow6")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(0.3, 0.3)
 shape = SubResource("RectangleShape2D_aivg2")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
@@ -28,6 +139,7 @@ script = ExtResource("3_5oow6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
 position = Vector2(0, 0.5)
+scale = Vector2(0.3, 0.3)
 shape = SubResource("RectangleShape2D_31jnu")
 
 [node name="Hitbox" type="Area2D" parent="."]
@@ -38,6 +150,17 @@ metadata/_custom_type_script = "uid://v5wrvpaabap5"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
 position = Vector2(0, 0.5)
+scale = Vector2(0.3, 0.3)
 shape = SubResource("RectangleShape2D_31jnu")
 
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.2, 0.2)
+sprite_frames = SubResource("SpriteFrames_arver")
+animation = &"attack"
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true
+
 [connection signal="area_entered" from="HurtBox" to="HurtBox" method="_on_area_entered"]
+[connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]

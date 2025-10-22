@@ -1,11 +1,27 @@
-[gd_scene load_steps=10 format=3 uid="uid://dchin36ajh5mm"]
+[gd_scene load_steps=27 format=3 uid="uid://dchin36ajh5mm"]
 
 [ext_resource type="Script" uid="uid://ucdklys53f8b" path="res://player/player.gd" id="1_rkbax"]
-[ext_resource type="Texture2D" uid="uid://cpynvr0us7ka4" path="res://sprites/survivor_pistol.png" id="2_rkbax"]
 [ext_resource type="Script" uid="uid://v5wrvpaabap5" path="res://scripts/hitbox.gd" id="3_g1dw6"]
 [ext_resource type="Script" uid="uid://cv7rm1bnmfbs" path="res://scripts/hurtbox.gd" id="4_yw30f"]
 [ext_resource type="PackedScene" uid="uid://coc23oplj0jht" path="res://objects/projetil.tscn" id="5_qjkh3"]
+[ext_resource type="Texture2D" uid="uid://dfo1dyb67apr0" path="res://sprites/zombie-tds-main-characters/Characters/PNG_Bodyparts&Animations/PNG Animations/Man/Death/death_0000_Man.png" id="6_bjvpn"]
 [ext_resource type="PackedScene" uid="uid://hdfgmx6ie0p7" path="res://player/hud.tscn" id="6_g6k8r"]
+[ext_resource type="Texture2D" uid="uid://psvkjvf064oj" path="res://sprites/zombie-tds-main-characters/Characters/PNG_Bodyparts&Animations/PNG Animations/Man/Death/death_0001_Man.png" id="7_s7qer"]
+[ext_resource type="Texture2D" uid="uid://di5w76ebl6bt1" path="res://sprites/zombie-tds-main-characters/Characters/PNG_Bodyparts&Animations/PNG Animations/Man/Death/death_0002_Man.png" id="8_g4c7l"]
+[ext_resource type="Texture2D" uid="uid://b1w5uomcktk4j" path="res://sprites/zombie-tds-main-characters/Characters/PNG_Bodyparts&Animations/PNG Animations/Man/Death/death_0003_Man.png" id="9_knn7v"]
+[ext_resource type="Texture2D" uid="uid://sf2j17gtit8o" path="res://sprites/zombie-tds-main-characters/Characters/PNG_Bodyparts&Animations/PNG Animations/Man/Death/death_0004_Man.png" id="10_7pqkx"]
+[ext_resource type="Texture2D" uid="uid://c1uwxnxxdkh7m" path="res://sprites/zombie-tds-main-characters/Characters/PNG_Bodyparts&Animations/PNG Animations/Man/Death/death_0005_Man.png" id="11_uw77l"]
+[ext_resource type="Texture2D" uid="uid://bo13rh06ouxwg" path="res://sprites/zombie-tds-main-characters/Characters/PNG_Bodyparts&Animations/PNG Animations/Man/Gun_Shot/Gun_Shot_000.png" id="12_rptt4"]
+[ext_resource type="Texture2D" uid="uid://dq2g7dojuvmg" path="res://sprites/zombie-tds-main-characters/Characters/PNG_Bodyparts&Animations/PNG Animations/Man/Gun_Shot/Gun_Shot_001.png" id="13_r7pn3"]
+[ext_resource type="Texture2D" uid="uid://c01b86jc6kvk8" path="res://sprites/zombie-tds-main-characters/Characters/PNG_Bodyparts&Animations/PNG Animations/Man/Gun_Shot/Gun_Shot_002.png" id="14_b8hi5"]
+[ext_resource type="Texture2D" uid="uid://n637mj8oshvx" path="res://sprites/zombie-tds-main-characters/Characters/PNG_Bodyparts&Animations/PNG Animations/Man/Gun_Shot/Gun_Shot_003.png" id="15_2uvqg"]
+[ext_resource type="Texture2D" uid="uid://dujxkhlkykos5" path="res://sprites/zombie-tds-main-characters/Characters/PNG_Bodyparts&Animations/PNG Animations/Man/Gun_Shot/Gun_Shot_004.png" id="16_1s1yo"]
+[ext_resource type="Texture2D" uid="uid://d0fttxq3b24h3" path="res://sprites/zombie-tds-main-characters/Characters/PNG_Bodyparts&Animations/PNG Animations/Man/Walk_gun/Walk_gun_000.png" id="17_5ejfk"]
+[ext_resource type="Texture2D" uid="uid://dc6fflqjxivog" path="res://sprites/zombie-tds-main-characters/Characters/PNG_Bodyparts&Animations/PNG Animations/Man/Walk_gun/Walk_gun_001.png" id="18_jd2rm"]
+[ext_resource type="Texture2D" uid="uid://1wd6f70727v2" path="res://sprites/zombie-tds-main-characters/Characters/PNG_Bodyparts&Animations/PNG Animations/Man/Walk_gun/Walk_gun_002.png" id="19_q28gw"]
+[ext_resource type="Texture2D" uid="uid://1gf5i6ny5yg4" path="res://sprites/zombie-tds-main-characters/Characters/PNG_Bodyparts&Animations/PNG Animations/Man/Walk_gun/Walk_gun_003.png" id="20_ge24q"]
+[ext_resource type="Texture2D" uid="uid://bkndovqqhjpg2" path="res://sprites/zombie-tds-main-characters/Characters/PNG_Bodyparts&Animations/PNG Animations/Man/Walk_gun/Walk_gun_004.png" id="21_pnw6m"]
+[ext_resource type="Texture2D" uid="uid://bopgmy0nynln5" path="res://sprites/zombie-tds-main-characters/Characters/PNG_Bodyparts&Animations/PNG Animations/Man/Walk_gun/Walk_gun_005.png" id="22_1so5t"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rkbax"]
 size = Vector2(30.5, 35)
@@ -16,11 +32,88 @@ size = Vector2(58, 55)
 [sub_resource type="Gradient" id="Gradient_g6k8r"]
 colors = PackedColorArray(1, 1, 1, 1, 0.972549, 0.5882353, 0, 1)
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_55jnj"]
+animations = [{
+"frames": [{
+"duration": 2.11,
+"texture": ExtResource("6_bjvpn")
+}, {
+"duration": 1.81,
+"texture": ExtResource("7_s7qer")
+}, {
+"duration": 2.01,
+"texture": ExtResource("8_g4c7l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_knn7v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_7pqkx")
+}, {
+"duration": 2.41,
+"texture": ExtResource("11_uw77l")
+}],
+"loop": false,
+"name": &"death",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("20_ge24q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_5ejfk")
+}],
+"loop": true,
+"name": &"idle_gun",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 0.7,
+"texture": ExtResource("12_rptt4")
+}, {
+"duration": 0.7,
+"texture": ExtResource("13_r7pn3")
+}, {
+"duration": 0.7,
+"texture": ExtResource("14_b8hi5")
+}, {
+"duration": 0.7,
+"texture": ExtResource("15_2uvqg")
+}, {
+"duration": 0.7,
+"texture": ExtResource("16_1s1yo")
+}],
+"loop": false,
+"name": &"shot",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("17_5ejfk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_jd2rm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_q28gw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_ge24q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_pnw6m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_1so5t")
+}],
+"loop": true,
+"name": &"walk_gun",
+"speed": 5.0
+}]
+
 [node name="player" type="CharacterBody2D"]
 script = ExtResource("1_rkbax")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_rkbax")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_rkbax")
@@ -63,4 +156,10 @@ initial_velocity_max = 100.0
 color_ramp = SubResource("Gradient_g6k8r")
 
 [node name="GunMuzzle" type="Marker2D" parent="."]
-position = Vector2(14, -13)
+position = Vector2(19, -60)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+rotation = 3.1415927
+scale = Vector2(0.2, 0.2)
+sprite_frames = SubResource("SpriteFrames_55jnj")
+animation = &"death"
