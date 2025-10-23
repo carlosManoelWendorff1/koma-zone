@@ -2,6 +2,7 @@ extends Node2D
 class_name EnemySpawner
 
 @export var interval: float = 1
+@export var enemy_count: int = 1
 @export var enemy_scene: PackedScene
 
 var enemy_instance: CharacterBody2D
@@ -19,6 +20,9 @@ func _ready() -> void:
 		timer.connect("timeout", _spawn_enemy)
 
 func _spawn_enemy() -> void:
+	if enemy_count <= 0:
+		return
+	
 	if not enemy_scene == null:
 		enemy_instance = enemy_scene.instantiate()
 		enemy_instance.player = get_parent().get_node("player")
@@ -26,5 +30,6 @@ func _spawn_enemy() -> void:
 	
 	if not enemy_instance == null:
 		get_parent().add_child(enemy_instance)
+		enemy_count -= 1
 	else:
 		print_debug("Enemy instance is null. ", position)
