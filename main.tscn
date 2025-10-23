@@ -3753,7 +3753,6 @@ player = NodePath("../player")
 dead_scene = ExtResource("4_5mrt3")
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
-visible = false
 position = Vector2(1291, 521)
 navigation_polygon = SubResource("NavigationPolygon_0yspx")
 travel_cost = 20.0
