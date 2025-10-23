@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://ddy8j145mvfvl"]
+[gd_scene load_steps=7 format=3 uid="uid://ddy8j145mvfvl"]
 
 [ext_resource type="Script" uid="uid://conxbgx41ifg0" path="res://Menu/menu.gd" id="1_8w4re"]
 [ext_resource type="Script" uid="uid://dwx8mcog0g6h2" path="res://Menu/jogar.gd" id="1_rwxi6"]
 [ext_resource type="Script" uid="uid://bpku0as1nnenw" path="res://Menu/controles.gd" id="2_raj00"]
 [ext_resource type="Script" uid="uid://dqkaosmxgy7r5" path="res://Menu/sair.gd" id="3_8w4re"]
 [ext_resource type="Script" uid="uid://v3ty4va2av7w" path="res://Menu/button.gd" id="3_ofseh"]
+[ext_resource type="AudioStream" uid="uid://bd07fkg3dibb4" path="res://musicas/Sombras do Caminho.mp3" id="6_w6voe"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -101,3 +102,8 @@ theme_override_font_sizes/font_size = 60
 text = "Koma Zone"
 horizontal_alignment = 1
 uppercase = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_w6voe")
+autoplay = true
+parameters/looping = true
