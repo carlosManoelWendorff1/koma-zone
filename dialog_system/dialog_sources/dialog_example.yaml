@@ -1,0 +1,38 @@
+context:
+  - name: dialog-demonstration-1
+	start_in: demo-greetings
+	end_in: farewell
+	dialog_nodes:
+	  - id: demo-greetings
+		title: The Demonstration
+		text: Hello, this is a test! I'm The Demonstration. Can I help you?
+		options:
+		  - placeholder: Nice! What can I do?
+			goes: what-i-can-do
+		  - placeholder: Shut up bro.
+			goes: farewell
+	  
+	  - id: what-i-can-do
+		title: The Demonstration
+		text: Well, you can choose an answer option... And continue the dialogue.
+		options:
+		  - placeholder: Got it.
+			goes: farewell
+		
+	  - id: farewell
+		title: The Demonstration
+		text: If I can help again, please contact me again.
+		options:
+		  - placeholder: ...
+			goes: farewell
+  
+  - name: sign-demonstration
+	start_in: message-demonstration
+	end_in: message-demonstration
+	dialog_nodes:
+	  - id: message-demonstration
+		title:
+		text: Talk to the guy next to you
+		options:
+		  - placeholder: ...
+			goes: message-demonstration

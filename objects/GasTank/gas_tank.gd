@@ -4,7 +4,7 @@ extends Node2D
 @export var explosion_scene: PackedScene
 @export var explosion_damage: int = 20
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if health <= 0:
 		gas_tank_break()
 
