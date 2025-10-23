@@ -83,7 +83,7 @@ func take_damage(damage: int) -> void:
 	if health <= 0:
 		die()
 
-func _on_hitbox_area_entered(area: Area2D) -> void:
+func _on_hitbox_area_entered(_area: Area2D) -> void:
 	if not alive or attacking:
 		return
 
