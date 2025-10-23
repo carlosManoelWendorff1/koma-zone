@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://d5b6pkb7ebxp"]
+
+[ext_resource type="Script" uid="uid://bahsfnouv8a7w" path="res://dialog_system/components/dialog_trigger.gd" id="1_ecg1x"]
+
+[node name="DialogTrigger" type="Area2D"]
+script = ExtResource("1_ecg1x")
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

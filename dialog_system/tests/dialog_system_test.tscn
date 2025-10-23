@@ -1,0 +1,34 @@
+[gd_scene load_steps=7 format=3 uid="uid://wbl4rp050e4q"]
+
+[ext_resource type="PackedScene" uid="uid://dchin36ajh5mm" path="res://player/player.tscn" id="1_gakey"]
+[ext_resource type="PackedScene" uid="uid://d5b6pkb7ebxp" path="res://dialog_system/components/dialog_trigger.tscn" id="2_1ktv5"]
+[ext_resource type="PackedScene" uid="uid://cqfmh3gsroshc" path="res://dialog_system/components/dialog_handler.tscn" id="3_1ktv5"]
+[ext_resource type="PackedScene" uid="uid://b7wtixm5w6nvh" path="res://dialog_system/components/dialog_manager.tscn" id="4_vr2ho"]
+[ext_resource type="PackedScene" uid="uid://c83mrkppqekr0" path="res://dialog_system/view/dialog_view.tscn" id="5_g013y"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i3nsg"]
+size = Vector2(196, 424.5)
+
+[node name="DialogSystemTest" type="Node2D"]
+
+[node name="player" parent="." instance=ExtResource("1_gakey")]
+position = Vector2(71, 60)
+
+[node name="DialogTrigger" parent="." instance=ExtResource("2_1ktv5")]
+position = Vector2(310, 69)
+dialog_time_interval = null
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DialogTrigger"]
+shape = SubResource("RectangleShape2D_i3nsg")
+
+[node name="DialogHandler" parent="DialogTrigger" instance=ExtResource("3_1ktv5")]
+dialog_json_file = "res://dialog_system/dialog_sources/dialog_example.json"
+context = "sign-demonstration"
+
+[node name="DialogManager" parent="." instance=ExtResource("4_vr2ho")]
+
+[node name="DialogView" parent="." instance=ExtResource("5_g013y")]
+offset_left = 358.0
+offset_top = 269.0
+offset_right = 358.0
+offset_bottom = 269.0
