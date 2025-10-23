@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://0bp2tbumr22s"
-path="res://.godot/imported/levels map.png-620f2ca28cf1cd70a2f4ca0263b77bcc.ctex"
+path="res://.godot/imported/levels map.png-83d3b5e0227176a636dda6a08de388c5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/zombie-tds-game-user-interface/PNG_Window/levels map.png"
-dest_files=["res://.godot/imported/levels map.png-620f2ca28cf1cd70a2f4ca0263b77bcc.ctex"]
+source_file="res://sprites/zombie-tds-main-characters/Items/PNG/levels map.png"
+dest_files=["res://.godot/imported/levels map.png-83d3b5e0227176a636dda6a08de388c5.ctex"]
 
 [params]
 

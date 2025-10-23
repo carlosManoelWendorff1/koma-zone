@@ -11,7 +11,10 @@ func _process(delta: float) -> void:
 	
 	if $secondElevator.isBeingCalled:
 		$EnemySpawner.enemy_count = 1
-		
+		$EnemySpawner2.enemy_count = 1
+
 	else :
 		$EnemySpawner.enemy_count = 0
+		$EnemySpawner2.enemy_count = 0
+
 	pass
