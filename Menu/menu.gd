@@ -11,9 +11,6 @@ func on_button_pressed(button: Button) -> void:
 		"jogar":
 			var _jogar: bool = get_tree().change_scene_to_file("res://main.tscn")
 		
-		"tutorial":
-			var _tutorial: bool = get_tree().change_scene_to_file("res://tutorial.tscn")
-		
 		"controles":
 			var _controles: bool = get_tree().change_scene_to_file("res://Menu/control.tscn")
 		
