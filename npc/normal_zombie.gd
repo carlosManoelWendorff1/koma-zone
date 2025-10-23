@@ -83,14 +83,14 @@ func take_damage(damage: int) -> void:
 	if health <= 0:
 		die()
 
-func _on_hitbox_area_entered(_area: Area2D) -> void:
+func _on_hitbox_body_entered(body: Node2D) -> void:
 	if not alive or attacking:
 		return
+	if body.name == "player": 
+		print("Zumbi atacou!")	
+		attacking = true
+		velocity = Vector2.ZERO
+		$AnimatedSprite2D.play("attack")
 
-	print("Zumbi atacou!")
-	attacking = true
-	velocity = Vector2.ZERO
-	$AnimatedSprite2D.play("attack")
-
-	await $AnimatedSprite2D.animation_finished
-	attacking = false
+		await $AnimatedSprite2D.animation_finished
+		attacking = false
