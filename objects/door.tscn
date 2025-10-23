@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://daj4hcq1twvkv"]
+
+[ext_resource type="Texture2D" uid="uid://b0wm1dftvqb6x" path="res://sprites/zombie-tds-tilesets-buildings-and-furniture/Objects/PNG/objects_house_0041_Layer-42.png" id="1_j7xx1"]
+[ext_resource type="Script" uid="uid://blut83yo5c5iv" path="res://objects/door.gd" id="1_khffo"]
+[ext_resource type="Texture2D" uid="uid://d6pjdwiecwvi" path="res://sprites/zombie-tds-tilesets-buildings-and-furniture/Objects/PNG/objects_house_0018_Layer-19.png" id="2_khffo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4hvcy"]
+size = Vector2(143, 55)
+
+[node name="Door" type="Node2D"]
+light_mask = 7
+visibility_layer = 7
+script = ExtResource("1_khffo")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(1.1920929e-07, 0)
+scale = Vector2(0.18477565, 0.06858915)
+texture = ExtResource("1_j7xx1")
+
+[node name="ObjectsHouse0018Layer19" type="Sprite2D" parent="Sprite2D"]
+z_index = -1
+position = Vector2(-302.00003, -112.36301)
+scale = Vector2(0.26199973, 0.5532505)
+texture = ExtResource("2_khffo")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+visibility_layer = 2
+position = Vector2(0.5, -17.5)
+shape = SubResource("RectangleShape2D_4hvcy")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

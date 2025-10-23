@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://jnbii507k3vr"]
+
+[ext_resource type="Script" uid="uid://hkvdl2hx0rau" path="res://objects/bullet_tracer.gd" id="1_a3k1x"]
+
+[sub_resource type="Gradient" id="Gradient_jdjcc"]
+offsets = PackedFloat32Array(0, 0.4931507, 1)
+colors = PackedColorArray(1, 0.6, 0, 1, 1, 1, 0, 1, 1, 1, 1, 1)
+
+[node name="bullet_tracer" type="Line2D"]
+width = 2.0
+gradient = SubResource("Gradient_jdjcc")
+script = ExtResource("1_a3k1x")

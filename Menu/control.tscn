@@ -1,4 +1,12 @@
-[gd_scene format=3 uid="uid://do33hlvdkkwlf"]
+[gd_scene load_steps=8 format=3 uid="uid://do33hlvdkkwlf"]
+
+[ext_resource type="Script" uid="uid://cly21mxthg44k" path="res://Menu/voltar.gd" id="1_g75mp"]
+[ext_resource type="Texture2D" uid="uid://ctq4dm88ij5tq" path="res://sprites/teclas/SimpleKeys/Jumbo/Light/Single PNGs/A.png" id="1_xumgl"]
+[ext_resource type="Texture2D" uid="uid://cptaslg3awoqp" path="res://sprites/teclas/SimpleKeys/Jumbo/Light/Single PNGs/D.png" id="2_bsg70"]
+[ext_resource type="Texture2D" uid="uid://hfj200coi7rn" path="res://sprites/teclas/SimpleKeys/Jumbo/Light/Single PNGs/S.png" id="3_g75mp"]
+[ext_resource type="Texture2D" uid="uid://bmlcevm5s2sih" path="res://sprites/teclas/SimpleKeys/Jumbo/Light/Single PNGs/W.png" id="4_a7b2e"]
+[ext_resource type="Texture2D" uid="uid://cdrqeppi6l4yi" path="res://sprites/teclas/MOUSE/MOUSEBUTTONLEFT.png" id="5_f1of3"]
+[ext_resource type="Texture2D" uid="uid://k500ukx2g2v5" path="res://sprites/teclas/SimpleKeys/Classic/Light/Single PNGs/EMPTY2.png" id="6_bsg70"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -30,3 +38,88 @@ offset_bottom = -28.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(1, 1, 1, 0.078431375)
+
+[node name="Button" type="Button" parent="ColorRect2" groups=["botao"]]
+layout_mode = 0
+offset_left = 429.0
+offset_top = 513.0
+offset_right = 547.0
+offset_bottom = 566.0
+theme_override_font_sizes/font_size = 24
+text = "Voltar"
+script = ExtResource("1_g75mp")
+
+[node name="A" type="Sprite2D" parent="."]
+position = Vector2(581.9999, 222.5)
+scale = Vector2(3, 3)
+texture = ExtResource("1_xumgl")
+
+[node name="D" type="Sprite2D" parent="."]
+position = Vector2(706.9999, 222.5)
+scale = Vector2(3, 3)
+texture = ExtResource("2_bsg70")
+
+[node name="S" type="Sprite2D" parent="."]
+position = Vector2(458.9999, 221.50002)
+scale = Vector2(3, 3)
+texture = ExtResource("3_g75mp")
+
+[node name="W" type="Sprite2D" parent="."]
+position = Vector2(579.9999, 95.5)
+scale = Vector2(3, 3)
+texture = ExtResource("4_a7b2e")
+
+[node name="Mousebuttonleft" type="Sprite2D" parent="."]
+position = Vector2(543, 426)
+scale = Vector2(7, 7)
+texture = ExtResource("5_f1of3")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 534.9999
+offset_top = 130.5
+offset_right = 628.9999
+offset_bottom = 172.5
+theme_override_font_sizes/font_size = 30
+text = "Frente"
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 547.9999
+offset_top = 262.5
+offset_right = 617.9999
+offset_bottom = 304.5
+theme_override_font_sizes/font_size = 30
+text = "Trás"
+
+[node name="Label3" type="Label" parent="."]
+layout_mode = 0
+offset_left = 676.9999
+offset_top = 261.5
+offset_right = 774.9999
+offset_bottom = 303.5
+theme_override_font_sizes/font_size = 30
+text = "Direita"
+
+[node name="Label4" type="Label" parent="."]
+layout_mode = 0
+offset_left = 345.9999
+offset_top = 259.5
+offset_right = 480.9999
+offset_bottom = 301.5
+theme_override_font_sizes/font_size = 30
+text = "Esquerda"
+
+[node name="Label5" type="Label" parent="."]
+layout_mode = 0
+offset_left = 611.99994
+offset_top = 414.0
+offset_right = 707.99994
+offset_bottom = 456.0
+theme_override_font_sizes/font_size = 30
+text = "Atirar"
+
+[node name="Empty2" type="Sprite2D" parent="."]
+position = Vector2(578.5, 343.25)
+scale = Vector2(22.230768, 0.46874595)
+texture = ExtResource("6_bsg70")

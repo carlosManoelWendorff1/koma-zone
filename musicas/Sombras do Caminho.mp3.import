@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bd07fkg3dibb4"
+path="res://.godot/imported/Sombras do Caminho.mp3-5f394e4c5e35c31c1eb9740ed8ed45a5.mp3str"
+
+[deps]
+
+source_file="res://musicas/Sombras do Caminho.mp3"
+dest_files=["res://.godot/imported/Sombras do Caminho.mp3-5f394e4c5e35c31c1eb9740ed8ed45a5.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
