@@ -5,7 +5,7 @@ extends Node2D
 
 func _ready() -> void:
 	# Define o tempo do timer para 60 segundos
-	$Timer.wait_time = 10
+	$Timer.wait_time = 60
 	$Timer.one_shot = true
 	$Label.text = "Elevador chegará em 60s"
 

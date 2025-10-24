@@ -151,6 +151,7 @@ color_ramp = SubResource("Gradient_g6k8r")
 position = Vector2(58, -188)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+z_index = 1
 position = Vector2(0, -1)
 rotation = 3.1415927
 sprite_frames = SubResource("SpriteFrames_55jnj")
