@@ -11,12 +11,28 @@ size = Vector2(196, 424.5)
 
 [node name="DialogSystemTest" type="Node2D"]
 
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="DialogView" parent="CanvasLayer" node_paths=PackedStringArray("_dialog_manager") instance=ExtResource("5_g013y")]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -483.0
+offset_top = -278.0
+offset_right = 487.0
+offset_bottom = -63.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 0
+_dialog_manager = NodePath("../../DialogManager")
+
 [node name="player" parent="." instance=ExtResource("1_gakey")]
 position = Vector2(71, 60)
 
 [node name="DialogTrigger" parent="." instance=ExtResource("2_1ktv5")]
 position = Vector2(310, 69)
-dialog_time_interval = null
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DialogTrigger"]
 shape = SubResource("RectangleShape2D_i3nsg")
@@ -25,10 +41,5 @@ shape = SubResource("RectangleShape2D_i3nsg")
 dialog_json_file = "res://dialog_system/dialog_sources/dialog_example.json"
 context = "sign-demonstration"
 
-[node name="DialogManager" parent="." instance=ExtResource("4_vr2ho")]
-
-[node name="DialogView" parent="." instance=ExtResource("5_g013y")]
-offset_left = 358.0
-offset_top = 269.0
-offset_right = 358.0
-offset_bottom = 269.0
+[node name="DialogManager" parent="." node_paths=PackedStringArray("_dialog_view") instance=ExtResource("4_vr2ho")]
+_dialog_view = NodePath("../CanvasLayer/DialogView")

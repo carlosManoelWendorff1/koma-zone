@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://ciok3bof6xo2p"]
+
+[ext_resource type="Script" uid="uid://cbvjyowq81rii" path="res://note.gd" id="1_nibca"]
+
+[node name="Note" type="Node2D"]
+script = ExtResource("1_nibca")

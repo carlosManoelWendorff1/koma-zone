@@ -1,0 +1,17 @@
+context:
+  - name: character_wake
+	start_in: wake-up
+	end_in: controls-tutorial
+	dialog_nodes:
+	  - id: wake-up
+		title: Você
+		text: Ai! Droga, isso dói... Preciso dar um jeito nisso. Primeiro, tenho que encontrar a saida desse lugar.
+		options:
+		  - placeholder: ...
+			goes: controls-tutorial
+	  - id: controls-tutorial
+		title: Tutorial
+		text: Use [W A S D] para se mover, e o mouse para mirar. Clique com o botão esquerdo para atirar.
+		options:
+		  - placeholder: ...
+			goes: controls-tutorial

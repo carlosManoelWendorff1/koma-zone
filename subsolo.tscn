@@ -17,7 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://db3auj84ehwip" path="res://sprites/zombie-tds-tilesets-buildings-and-furniture/Tiles/PNG/Walls/walls_0046_Layer-47.png" id="13_m63fd"]
 [ext_resource type="Texture2D" uid="uid://bhjd2ynnxyrfb" path="res://sprites/zombie-tds-tilesets-buildings-and-furniture/Tiles/PNG/Walls/walls_0047_Layer-48.png" id="14_07asv"]
 [ext_resource type="PackedScene" uid="uid://06hbpaecgksq" path="res://second_elevator.tscn" id="16_oyc8v"]
-[ext_resource type="PackedScene" uid="uid://0ye8op0o5cc2" path="res://components/spawner.tscn" id="18_773uk"]
+[ext_resource type="PackedScene" uid="uid://0ye8op0o5cc2" path="res://components/spawner/spawner.tscn" id="18_773uk"]
 [ext_resource type="PackedScene" uid="uid://dh0v7yj6ps5vu" path="res://npc/normal_zombie.tscn" id="19_425cg"]
 [ext_resource type="Texture2D" uid="uid://cudj2kyw4wjv5" path="res://sprites/zombie-tds-machines-and-tanks/PNG/Pickup/pickup_0001_Layer-2.png" id="19_yiwfe"]
 [ext_resource type="Texture2D" uid="uid://c4n15fi721jm0" path="res://sprites/zombie-tds-machines-and-tanks/PNG/Car/car_0001_Layer-2.png" id="20_773uk"]

@@ -1,7 +1,7 @@
 extends Control
 class_name DialogView
 
-var _dialog_manager: DialogManager
+@export var _dialog_manager: DialogManager
 var options_vbox: VBoxContainer
 var title_text_reach: RichTextLabel
 var text_text_reach: RichTextLabel
@@ -10,7 +10,6 @@ func _ready() -> void:
 	title_text_reach = get_node('Background/VBoxContainer/Title')
 	text_text_reach = get_node('Background/VBoxContainer/Text')
 	options_vbox = get_node('Background/VBoxContainer/Options')
-	_dialog_manager = get_parent().get_node('DialogManager')
 	
 	if title_text_reach == null:
 		push_error("DialogView component is missing title TextTeach.")
