@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=4 uid="uid://dfaapmnhc287b"]
+[gd_scene load_steps=62 format=4 uid="uid://dfaapmnhc287b"]
 
 [ext_resource type="Script" uid="uid://dik28b1c6ty4u" path="res://subsolo.gd" id="1_4ydb5"]
 [ext_resource type="Texture2D" uid="uid://btnbg3rar2sof" path="res://tiles/Tilesets/Wall Tiles.png" id="1_ybol8"]
@@ -30,6 +30,12 @@
 [ext_resource type="Texture2D" uid="uid://ctlf70suavbb8" path="res://sprites/zombie-tds-tilesets-soil-stones-plants-water-destroyed-cars/Objects/PNG/Objects_outside/objects_outside_0012_Layer-13.png" id="28_0knj6"]
 [ext_resource type="PackedScene" uid="uid://duymqadydwp6v" path="res://luz.tscn" id="29_dqc3s"]
 [ext_resource type="Texture2D" uid="uid://c8rv5iywytcu5" path="res://sprites/zombie-tds-tilesets-buildings-and-furniture/Objects/PNG/objects_house_0021_Layer-22.png" id="29_n7gyy"]
+[ext_resource type="PackedScene" uid="uid://c83mrkppqekr0" path="res://dialog_system/view/dialog_view.tscn" id="30_0knj6"]
+[ext_resource type="PackedScene" uid="uid://b7wtixm5w6nvh" path="res://dialog_system/components/dialog_manager.tscn" id="32_n7gyy"]
+[ext_resource type="PackedScene" uid="uid://d5b6pkb7ebxp" path="res://dialog_system/components/dialog_trigger.tscn" id="33_oglgf"]
+[ext_resource type="PackedScene" uid="uid://cqfmh3gsroshc" path="res://dialog_system/components/dialog_handler.tscn" id="34_dtmv5"]
+[ext_resource type="PackedScene" uid="uid://ciok3bof6xo2p" path="res://components/note.tscn" id="35_op3tm"]
+[ext_resource type="PackedScene" uid="uid://dbcd02dvpuy70" path="res://components/interactable/interactable_component.tscn" id="36_68u1r"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5x6x2"]
 texture = ExtResource("1_ybol8")
@@ -5727,6 +5733,15 @@ height = 200
 fill_from = Vector2(0.539119, 0.41452995)
 fill_to = Vector2(0.53254443, 0.008547009)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lfhv8"]
+size = Vector2(160, 360.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0knj6"]
+size = Vector2(506.99997, 221.27185)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4y5op"]
+size = Vector2(894.48254, 175.5)
+
 [node name="Subsolo" type="Node2D"]
 script = ExtResource("1_4ydb5")
 
@@ -6034,6 +6049,24 @@ enemy_scene = ExtResource("19_425cg")
 position = Vector2(403, -127)
 scale = Vector2(4, 4)
 
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 0
+
+[node name="DialogView" parent="CanvasLayer" node_paths=PackedStringArray("_dialog_manager") instance=ExtResource("30_0knj6")]
+visible = false
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -485.0
+offset_top = -273.0
+offset_right = 485.0
+offset_bottom = -58.0
+grow_horizontal = 2
+grow_vertical = 0
+_dialog_manager = NodePath("../../DialogManager")
+
 [node name="player" parent="." instance=ExtResource("3_l62jc")]
 position = Vector2(59, -112)
 scale = Vector2(0.40000007, 0.40000007)
@@ -6055,3 +6088,111 @@ scale = Vector2(4, 4)
 [node name="luz5" parent="." instance=ExtResource("29_dqc3s")]
 position = Vector2(454, 1265)
 scale = Vector2(4, 4)
+
+[node name="DialogManager" parent="." node_paths=PackedStringArray("_dialog_view") instance=ExtResource("32_n7gyy")]
+_dialog_view = NodePath("../CanvasLayer/DialogView")
+
+[node name="DialogTriggers" type="Node2D" parent="."]
+
+[node name="DialogTrigger" parent="DialogTriggers" node_paths=PackedStringArray("dialog_manager") instance=ExtResource("33_oglgf")]
+position = Vector2(325, -66)
+dialog_time_interval = 5.0
+dialog_manager = NodePath("../../DialogManager")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DialogTriggers/DialogTrigger"]
+shape = SubResource("RectangleShape2D_lfhv8")
+
+[node name="DialogHandler" parent="DialogTriggers/DialogTrigger" node_paths=PackedStringArray("_dialog_manager") instance=ExtResource("34_dtmv5")]
+dialog_json_file = "res://dialog_system/dialog_sources/subsolo_dialogs.json"
+context = "enter_subsolo"
+_dialog_manager = NodePath("../../../DialogManager")
+
+[node name="DialogTrigger2" parent="DialogTriggers" node_paths=PackedStringArray("dialog_manager") instance=ExtResource("33_oglgf")]
+position = Vector2(1570, 1236)
+dialog_time_interval = 5.0
+dialog_manager = NodePath("../../DialogManager")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DialogTriggers/DialogTrigger2"]
+shape = SubResource("RectangleShape2D_lfhv8")
+
+[node name="DialogHandler" parent="DialogTriggers/DialogTrigger2" node_paths=PackedStringArray("_dialog_manager") instance=ExtResource("34_dtmv5")]
+dialog_json_file = "res://dialog_system/dialog_sources/subsolo_dialogs.json"
+context = "i-can-see-the-elevator"
+_dialog_manager = NodePath("../../../DialogManager")
+
+[node name="Interactables" type="Node2D" parent="."]
+
+[node name="TV" parent="Interactables" node_paths=PackedStringArray("_dialog_manager") instance=ExtResource("35_op3tm")]
+position = Vector2(2323, -121)
+_dialog_manager = NodePath("../../DialogManager")
+
+[node name="InteractableComponent" parent="Interactables/TV" instance=ExtResource("36_68u1r")]
+position = Vector2(0, -48)
+
+[node name="Area2D" type="Area2D" parent="Interactables/TV/InteractableComponent"]
+position = Vector2(14, -8)
+rotation = 1.0367255
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactables/TV/InteractableComponent/Area2D"]
+shape = SubResource("RectangleShape2D_0knj6")
+
+[node name="DialogHandler" parent="Interactables/TV" node_paths=PackedStringArray("_dialog_manager") instance=ExtResource("34_dtmv5")]
+dialog_json_file = "res://dialog_system/dialog_sources/subsolo_dialogs.json"
+context = "tv-interaction"
+_dialog_manager = NodePath("../../../DialogManager")
+
+[node name="WeaponTable" parent="Interactables" node_paths=PackedStringArray("_dialog_manager") instance=ExtResource("35_op3tm")]
+position = Vector2(214, 822)
+_dialog_manager = NodePath("../../DialogManager")
+
+[node name="InteractableComponent" parent="Interactables/WeaponTable" instance=ExtResource("36_68u1r")]
+position = Vector2(0, -48)
+
+[node name="Area2D" type="Area2D" parent="Interactables/WeaponTable/InteractableComponent"]
+position = Vector2(14, -8)
+rotation = 1.5707964
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactables/WeaponTable/InteractableComponent/Area2D"]
+position = Vector2(-10.5, -53.364075)
+shape = SubResource("RectangleShape2D_0knj6")
+
+[node name="DialogHandler" parent="Interactables/WeaponTable" node_paths=PackedStringArray("_dialog_manager") instance=ExtResource("34_dtmv5")]
+dialog_json_file = "res://dialog_system/dialog_sources/subsolo_dialogs.json"
+context = "weapon-table"
+_dialog_manager = NodePath("../../../DialogManager")
+
+[node name="Car" parent="Interactables" node_paths=PackedStringArray("_dialog_manager") instance=ExtResource("35_op3tm")]
+position = Vector2(1990, 669)
+_dialog_manager = NodePath("../../DialogManager")
+
+[node name="InteractableComponent" parent="Interactables/Car" instance=ExtResource("36_68u1r")]
+position = Vector2(0, -48)
+
+[node name="Area2D" type="Area2D" parent="Interactables/Car/InteractableComponent"]
+position = Vector2(14, -8)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactables/Car/InteractableComponent/Area2D"]
+shape = SubResource("RectangleShape2D_4y5op")
+
+[node name="DialogHandler" parent="Interactables/Car" node_paths=PackedStringArray("_dialog_manager") instance=ExtResource("34_dtmv5")]
+dialog_json_file = "res://dialog_system/dialog_sources/subsolo_dialogs.json"
+context = "a-car-in-subsolo"
+_dialog_manager = NodePath("../../../DialogManager")
+
+[node name="Car2" parent="Interactables" node_paths=PackedStringArray("_dialog_manager") instance=ExtResource("35_op3tm")]
+position = Vector2(1119, 710)
+_dialog_manager = NodePath("../../DialogManager")
+
+[node name="InteractableComponent" parent="Interactables/Car2" instance=ExtResource("36_68u1r")]
+position = Vector2(0, -48)
+
+[node name="Area2D" type="Area2D" parent="Interactables/Car2/InteractableComponent"]
+position = Vector2(14, -8)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactables/Car2/InteractableComponent/Area2D"]
+shape = SubResource("RectangleShape2D_4y5op")
+
+[node name="DialogHandler" parent="Interactables/Car2" node_paths=PackedStringArray("_dialog_manager") instance=ExtResource("34_dtmv5")]
+dialog_json_file = "res://dialog_system/dialog_sources/subsolo_dialogs.json"
+context = "a-car-in-subsolo"
+_dialog_manager = NodePath("../../../DialogManager")

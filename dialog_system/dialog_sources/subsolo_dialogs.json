@@ -1,0 +1,88 @@
+{
+	"Context": [
+		{
+			"Name": "enter_subsolo",
+			"StartIn": "on-enter",
+			"EndIn": "elevator-location",
+			"DialogNodes": [
+				{
+					"ID": "on-enter",
+					"Title": "Você",
+					"Text": "Ufa! Consegui chegar no subsolo. Espero não encontrar nenhuma surpresa por aqui.",
+					"Options": []
+				},
+				{
+					"ID": "elevator-location",
+					"Title": "Você",
+					"Text": "Preciso chegar no elevador. Ele está no fim desses corredores.",
+					"Options": []
+				}
+			]
+		},
+		{
+			"Name": "observation-about-zombies",
+			"StartIn": "a-lot-of-zombies",
+			"EndIn": "a-lot-of-zombies",
+			"DialogNodes": [
+				{
+					"ID": "a-lot-of-zombies",
+					"Title": "Você",
+					"Text": "Tem muitas desses bichos aqui... Preciso ter cuidado.",
+					"Options": []
+				}
+			]
+		},
+		{
+			"Name": "tv-interaction",
+			"StartIn": "tv-is-off",
+			"EndIn": "tv-is-off",
+			"DialogNodes": [
+				{
+					"ID": "tv-is-off",
+					"Title": "Você",
+					"Text": "Infelizmente não pega sinal aqui em baixo. Me pergunto o porque de alguém trazer uma TV aqui para baixo...",
+					"Options": []
+				}
+			]
+		},
+		{
+			"Name": "weapon-table",
+			"StartIn": "i-have-a-gun",
+			"EndIn": "i-have-a-gun",
+			"DialogNodes": [
+				{
+					"ID": "i-have-a-gun",
+					"Title": "Você",
+					"Text": "Eu já tenho a minha arma. Não preciso de outra... Eu me garanto!",
+					"Options": []
+				}
+			]
+		},
+		{
+			"Name": "i-can-see-the-elevator",
+			"StartIn": "the-elevator",
+			"EndIn": "the-elevator",
+			"DialogNodes": [
+				{
+					"ID": "the-elevator",
+					"Title": "Você",
+					"Text": "Finalmente! Cheguei no elevador.",
+					"Options": []
+				}
+			]
+		},
+		{
+			"Name": "a-car-in-subsolo",
+			"StartIn": "car-in-subsolo",
+			"EndIn": "car-in-subsolo",
+			"DialogNodes": [
+				{
+					"ID": "car-in-subsolo",
+					"Title": "Você",
+					"Text": "Como que esse carro veio parar aqui?",
+					"Options": []
+				}
+			]
+		}
+	]
+}
