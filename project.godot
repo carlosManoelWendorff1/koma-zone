@@ -15,6 +15,10 @@ run/main_scene="uid://cjee6x54wvfd2"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Loading="*res://loading/Loading.gd"
+
 [dotnet]
 
 project/assembly_name="KomaZone"

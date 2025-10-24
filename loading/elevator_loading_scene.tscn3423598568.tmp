@@ -59,66 +59,65 @@ _data = {
 &"elevator": SubResource("Animation_fk36s")
 }
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_a7i3t"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_rhpwu"]
 atlas = ExtResource("3_t0uba")
-region = Rect2(192, 0, 32, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_kru8s"]
-atlas = ExtResource("3_t0uba")
-region = Rect2(160, 0, 32, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ei0j4"]
-atlas = ExtResource("3_t0uba")
-region = Rect2(128, 0, 32, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_k7pk2"]
-atlas = ExtResource("3_t0uba")
-region = Rect2(96, 0, 32, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_dgn0o"]
-atlas = ExtResource("3_t0uba")
-region = Rect2(64, 0, 32, 48)
+region = Rect2(0, 0, 32, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_h0egm"]
 atlas = ExtResource("3_t0uba")
 region = Rect2(32, 0, 32, 48)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_rhpwu"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_dgn0o"]
 atlas = ExtResource("3_t0uba")
-region = Rect2(0, 0, 32, 48)
+region = Rect2(64, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k7pk2"]
+atlas = ExtResource("3_t0uba")
+region = Rect2(96, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ei0j4"]
+atlas = ExtResource("3_t0uba")
+region = Rect2(128, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kru8s"]
+atlas = ExtResource("3_t0uba")
+region = Rect2(160, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a7i3t"]
+atlas = ExtResource("3_t0uba")
+region = Rect2(192, 0, 32, 48)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_10lq0"]
 animations = [{
 "frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_a7i3t")
+"duration": 2.81,
+"texture": SubResource("AtlasTexture_rhpwu")
+}, {
+"duration": 0.71,
+"texture": SubResource("AtlasTexture_h0egm")
+}, {
+"duration": 0.91,
+"texture": SubResource("AtlasTexture_dgn0o")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_kru8s")
+"texture": SubResource("AtlasTexture_k7pk2")
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ei0j4")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_k7pk2")
+"texture": SubResource("AtlasTexture_kru8s")
 }, {
-"duration": 0.91,
-"texture": SubResource("AtlasTexture_dgn0o")
-}, {
-"duration": 0.71,
-"texture": SubResource("AtlasTexture_h0egm")
-}, {
-"duration": 2.81,
-"texture": SubResource("AtlasTexture_rhpwu")
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a7i3t")
 }],
 "loop": false,
 "name": &"default",
-"speed": 8.0
+"speed": 6.0
 }]
 
 [node name="ElevatorLoadingScene" type="CanvasLayer"]
 script = ExtResource("1_ippwy")
-change_scene = null
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -174,5 +173,3 @@ offset_bottom = 563.0
 grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_use_anchors_ = true
-
-[connection signal="button_down" from="Button" to="." method="_on_button_button_down"]
