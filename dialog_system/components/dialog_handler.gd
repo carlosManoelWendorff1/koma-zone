@@ -4,12 +4,9 @@ class_name DialogHandler
 @export_file("*.json") var dialog_json_file: String
 @export var context = ""
 
-var _dialog_manager: DialogManager
+@export var _dialog_manager: DialogManager
 
 @onready var _dialog_scoop = {}
-
-func _ready() -> void:
-	_dialog_manager = get_parent().get_parent().get_node('DialogManager')
 
 func init_dialog() -> void:
 	_dialog_scoop = _load_dialog_json()

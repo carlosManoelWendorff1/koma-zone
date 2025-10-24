@@ -1,4 +1,4 @@
-[gd_scene load_steps=106 format=4 uid="uid://cjee6x54wvfd2"]
+[gd_scene load_steps=114 format=4 uid="uid://cjee6x54wvfd2"]
 
 [ext_resource type="Texture2D" uid="uid://bg5xyhkvpqpf8" path="res://sprites/zombie-tds-tilesets-soil-stones-plants-water-destroyed-cars/Tiles&Details/PNG/Ground_tiles/ground_tiles_0000_Layer-50.png" id="1_g52lx"]
 [ext_resource type="Texture2D" uid="uid://dr8fj5ecf1w5r" path="res://sprites/zombie-tds-tilesets-soil-stones-plants-water-destroyed-cars/Objects/PNG/Objects_outside/objects_outside_0008_Layer-9.png" id="1_nrq6j"]
@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://dmimtundv03a3" path="res://sprites/zombie-tds-tilesets-soil-stones-plants-water-destroyed-cars/Tiles&Details/PNG/Ground_tiles/ground_tiles_0002_Layer-48.png" id="3_dudfa"]
 [ext_resource type="Texture2D" uid="uid://dilld8x56ervp" path="res://sprites/zombie-tds-tilesets-soil-stones-plants-water-destroyed-cars/Tiles&Details/PNG/Ground_tiles/ground_tiles_0003_Layer-47.png" id="4_5gpbq"]
 [ext_resource type="PackedScene" uid="uid://cx632qaat2rra" path="res://npc/dead_zombie.tscn" id="4_5mrt3"]
-[ext_resource type="PackedScene" uid="uid://0ye8op0o5cc2" path="res://components/spawner.tscn" id="5_rwowx"]
+[ext_resource type="PackedScene" uid="uid://0ye8op0o5cc2" path="res://components/spawner/spawner.tscn" id="5_rwowx"]
 [ext_resource type="Texture2D" uid="uid://cq8uiia5qux40" path="res://sprites/zombie-tds-tilesets-soil-stones-plants-water-destroyed-cars/Tiles&Details/PNG/Ground_tiles/ground_tiles_0004_Layer-46.png" id="5_tfgte"]
 [ext_resource type="Texture2D" uid="uid://ckbp4ie1jab1f" path="res://sprites/zombie-tds-tilesets-soil-stones-plants-water-destroyed-cars/Tiles&Details/PNG/Ground_tiles/ground_tiles_0005_Layer-45.png" id="6_dyhf1"]
 [ext_resource type="Texture2D" uid="uid://r51hq52a3i3p" path="res://sprites/zombie-tds-tilesets-soil-stones-plants-water-destroyed-cars/Tiles&Details/PNG/Ground_tiles/ground_tiles_0006_Layer-44.png" id="7_53tq2"]
@@ -66,6 +66,12 @@
 [ext_resource type="Texture2D" uid="uid://1v2w10jb8xxj" path="res://sprites/zombie-tds-tilesets-buildings-and-furniture/Objects/PNG/objects_house_0053_Layer-54.png" id="64_jx0wj"]
 [ext_resource type="Texture2D" uid="uid://c8rv5iywytcu5" path="res://sprites/zombie-tds-tilesets-buildings-and-furniture/Objects/PNG/objects_house_0021_Layer-22.png" id="65_kkkcx"]
 [ext_resource type="PackedScene" uid="uid://duymqadydwp6v" path="res://luz.tscn" id="66_uatky"]
+[ext_resource type="PackedScene" uid="uid://d5b6pkb7ebxp" path="res://dialog_system/components/dialog_trigger.tscn" id="67_1vm84"]
+[ext_resource type="PackedScene" uid="uid://cqfmh3gsroshc" path="res://dialog_system/components/dialog_handler.tscn" id="68_wu3dr"]
+[ext_resource type="PackedScene" uid="uid://c83mrkppqekr0" path="res://dialog_system/view/dialog_view.tscn" id="69_wu3dr"]
+[ext_resource type="PackedScene" uid="uid://b7wtixm5w6nvh" path="res://dialog_system/components/dialog_manager.tscn" id="70_cyx1q"]
+[ext_resource type="PackedScene" uid="uid://ciok3bof6xo2p" path="res://components/note.tscn" id="71_jx0wj"]
+[ext_resource type="PackedScene" uid="uid://dbcd02dvpuy70" path="res://components/interactable/interactable_component.tscn" id="72_kkkcx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_phpvg"]
 texture = ExtResource("1_nrq6j")
@@ -3770,6 +3776,12 @@ fill = 1
 fill_from = Vector2(0.51282054, 0.4786325)
 fill_to = Vector2(1, 0.49145302)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cyx1q"]
+size = Vector2(160, 360.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wy5fy"]
+size = Vector2(197, 127)
+
 [node name="Tutorial" type="Node2D"]
 
 [node name="TileMapLayer2" type="TileMapLayer" parent="."]
@@ -4227,6 +4239,24 @@ shape = SubResource("CircleShape2D_phcyf")
 position = Vector2(-1.280191, 148.21724)
 texture = SubResource("GradientTexture2D_f1p13")
 
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 0
+
+[node name="DialogView" parent="CanvasLayer" node_paths=PackedStringArray("_dialog_manager") instance=ExtResource("69_wu3dr")]
+visible = false
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -485.0
+offset_top = -273.0
+offset_right = 485.0
+offset_bottom = -58.0
+grow_horizontal = 2
+grow_vertical = 0
+_dialog_manager = NodePath("../../DialogManager")
+
 [node name="player" parent="." instance=ExtResource("2_ehuit")]
 position = Vector2(-191, -130)
 
@@ -4268,3 +4298,158 @@ scale = Vector2(3, 3)
 [node name="luz9" parent="." instance=ExtResource("66_uatky")]
 position = Vector2(2469, 917)
 scale = Vector2(3, 3)
+
+[node name="DialogTriggers" type="Node2D" parent="."]
+
+[node name="DialogTrigger" parent="DialogTriggers" node_paths=PackedStringArray("dialog_manager") instance=ExtResource("67_1vm84")]
+position = Vector2(-10, -156)
+dialog_time_interval = 5.0
+dialog_manager = NodePath("../../DialogManager")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DialogTriggers/DialogTrigger"]
+shape = SubResource("RectangleShape2D_cyx1q")
+
+[node name="DialogHandler" parent="DialogTriggers/DialogTrigger" node_paths=PackedStringArray("_dialog_manager") instance=ExtResource("68_wu3dr")]
+dialog_json_file = "res://dialog_system/dialog_sources/tutorial_dialogs.json"
+context = "character_wake"
+_dialog_manager = NodePath("../../../DialogManager")
+
+[node name="DialogTrigger2" parent="DialogTriggers" node_paths=PackedStringArray("dialog_manager") instance=ExtResource("67_1vm84")]
+position = Vector2(289, 1039)
+dialog_time_interval = 5.0
+dialog_manager = NodePath("../../DialogManager")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DialogTriggers/DialogTrigger2"]
+shape = SubResource("RectangleShape2D_cyx1q")
+
+[node name="DialogHandler" parent="DialogTriggers/DialogTrigger2" node_paths=PackedStringArray("_dialog_manager") instance=ExtResource("68_wu3dr")]
+dialog_json_file = "res://dialog_system/dialog_sources/tutorial_dialogs.json"
+context = "observation-about-zombies"
+_dialog_manager = NodePath("../../../DialogManager")
+
+[node name="DialogManager" parent="." node_paths=PackedStringArray("_dialog_view") instance=ExtResource("70_cyx1q")]
+_dialog_view = NodePath("../CanvasLayer/DialogView")
+
+[node name="Interactables" type="Node2D" parent="."]
+
+[node name="TV" parent="Interactables" node_paths=PackedStringArray("_dialog_manager") instance=ExtResource("71_jx0wj")]
+position = Vector2(127, -68)
+_dialog_manager = NodePath("../../DialogManager")
+
+[node name="InteractableComponent" parent="Interactables/TV" instance=ExtResource("72_kkkcx")]
+position = Vector2(0, -48)
+
+[node name="Area2D" type="Area2D" parent="Interactables/TV/InteractableComponent"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactables/TV/InteractableComponent/Area2D"]
+shape = SubResource("RectangleShape2D_wy5fy")
+
+[node name="DialogHandler" parent="Interactables/TV" node_paths=PackedStringArray("_dialog_manager") instance=ExtResource("68_wu3dr")]
+dialog_json_file = "res://dialog_system/dialog_sources/tutorial_dialogs.json"
+context = "tv-interaction"
+_dialog_manager = NodePath("../../../DialogManager")
+
+[node name="TV2" parent="Interactables" node_paths=PackedStringArray("_dialog_manager") instance=ExtResource("71_jx0wj")]
+position = Vector2(1783, 1629)
+_dialog_manager = NodePath("../../DialogManager")
+
+[node name="InteractableComponent" parent="Interactables/TV2" instance=ExtResource("72_kkkcx")]
+position = Vector2(-69, -15)
+rotation = 1.5707964
+
+[node name="Area2D" type="Area2D" parent="Interactables/TV2/InteractableComponent"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactables/TV2/InteractableComponent/Area2D"]
+shape = SubResource("RectangleShape2D_wy5fy")
+
+[node name="DialogHandler" parent="Interactables/TV2" node_paths=PackedStringArray("_dialog_manager") instance=ExtResource("68_wu3dr")]
+dialog_json_file = "res://dialog_system/dialog_sources/tutorial_dialogs.json"
+context = "tv-interaction"
+_dialog_manager = NodePath("../../../DialogManager")
+
+[node name="TV3" parent="Interactables" node_paths=PackedStringArray("_dialog_manager") instance=ExtResource("71_jx0wj")]
+position = Vector2(2679, 1879)
+_dialog_manager = NodePath("../../DialogManager")
+
+[node name="InteractableComponent" parent="Interactables/TV3" instance=ExtResource("72_kkkcx")]
+position = Vector2(-69, -15)
+rotation = 1.5707964
+
+[node name="Area2D" type="Area2D" parent="Interactables/TV3/InteractableComponent"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactables/TV3/InteractableComponent/Area2D"]
+shape = SubResource("RectangleShape2D_wy5fy")
+
+[node name="DialogHandler" parent="Interactables/TV3" node_paths=PackedStringArray("_dialog_manager") instance=ExtResource("68_wu3dr")]
+dialog_json_file = "res://dialog_system/dialog_sources/tutorial_dialogs.json"
+context = "tv-interaction"
+_dialog_manager = NodePath("../../../DialogManager")
+
+[node name="Shelf" parent="Interactables" node_paths=PackedStringArray("_dialog_manager") instance=ExtResource("71_jx0wj")]
+position = Vector2(-314, -213)
+_dialog_manager = NodePath("../../DialogManager")
+
+[node name="InteractableComponent" parent="Interactables/Shelf" instance=ExtResource("72_kkkcx")]
+position = Vector2(0, -1)
+
+[node name="Area2D" type="Area2D" parent="Interactables/Shelf/InteractableComponent"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactables/Shelf/InteractableComponent/Area2D"]
+shape = SubResource("RectangleShape2D_wy5fy")
+
+[node name="DialogHandler" parent="Interactables/Shelf" node_paths=PackedStringArray("_dialog_manager") instance=ExtResource("68_wu3dr")]
+dialog_json_file = "res://dialog_system/dialog_sources/tutorial_dialogs.json"
+context = "shelf-interaction"
+_dialog_manager = NodePath("../../../DialogManager")
+
+[node name="Shelf2" parent="Interactables" node_paths=PackedStringArray("_dialog_manager") instance=ExtResource("71_jx0wj")]
+position = Vector2(476, 883)
+_dialog_manager = NodePath("../../DialogManager")
+
+[node name="InteractableComponent" parent="Interactables/Shelf2" instance=ExtResource("72_kkkcx")]
+position = Vector2(0, -1)
+
+[node name="Area2D" type="Area2D" parent="Interactables/Shelf2/InteractableComponent"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactables/Shelf2/InteractableComponent/Area2D"]
+shape = SubResource("RectangleShape2D_wy5fy")
+
+[node name="DialogHandler" parent="Interactables/Shelf2" node_paths=PackedStringArray("_dialog_manager") instance=ExtResource("68_wu3dr")]
+dialog_json_file = "res://dialog_system/dialog_sources/tutorial_dialogs.json"
+context = "shelf-interaction"
+_dialog_manager = NodePath("../../../DialogManager")
+
+[node name="Shelf3" parent="Interactables" node_paths=PackedStringArray("_dialog_manager") instance=ExtResource("71_jx0wj")]
+position = Vector2(1471, 1947)
+_dialog_manager = NodePath("../../DialogManager")
+
+[node name="InteractableComponent" parent="Interactables/Shelf3" instance=ExtResource("72_kkkcx")]
+position = Vector2(3, -67)
+
+[node name="Area2D" type="Area2D" parent="Interactables/Shelf3/InteractableComponent"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactables/Shelf3/InteractableComponent/Area2D"]
+shape = SubResource("RectangleShape2D_wy5fy")
+
+[node name="DialogHandler" parent="Interactables/Shelf3" node_paths=PackedStringArray("_dialog_manager") instance=ExtResource("68_wu3dr")]
+dialog_json_file = "res://dialog_system/dialog_sources/tutorial_dialogs.json"
+context = "shelf-interaction"
+_dialog_manager = NodePath("../../../DialogManager")
+
+[node name="Shelf4" parent="Interactables" node_paths=PackedStringArray("_dialog_manager") instance=ExtResource("71_jx0wj")]
+position = Vector2(2409, 1615)
+_dialog_manager = NodePath("../../DialogManager")
+
+[node name="InteractableComponent" parent="Interactables/Shelf4" instance=ExtResource("72_kkkcx")]
+position = Vector2(72, 2)
+rotation = 1.5707964
+
+[node name="Area2D" type="Area2D" parent="Interactables/Shelf4/InteractableComponent"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactables/Shelf4/InteractableComponent/Area2D"]
+shape = SubResource("RectangleShape2D_wy5fy")
+
+[node name="DialogHandler" parent="Interactables/Shelf4" node_paths=PackedStringArray("_dialog_manager") instance=ExtResource("68_wu3dr")]
+dialog_json_file = "res://dialog_system/dialog_sources/tutorial_dialogs.json"
+context = "shelf-interaction"
+_dialog_manager = NodePath("../../../DialogManager")

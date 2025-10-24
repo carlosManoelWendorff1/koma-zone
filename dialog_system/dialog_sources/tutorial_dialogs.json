@@ -1,0 +1,62 @@
+{
+	"Context": [
+		{
+			"Name": "character_wake",
+			"StartIn": "wake-up",
+			"EndIn": "controls-tutorial",
+			"DialogNodes": [
+				{
+					"ID": "wake-up",
+					"Title": "Você",
+					"Text": "Ai! Droga, isso dói... Preciso dar um jeito nisso. Primeiro, tenho que encontrar a saida desse lugar.",
+					"Options": []
+				},
+				{
+					"ID": "controls-tutorial",
+					"Title": "Tutorial",
+					"Text": "Use [W A S D] para se mover. Mire com o mouse e [CLIQUE ESQUERDO] para atirar. Para interagir use [E].",
+					"Options": []
+				}
+			]
+		},
+		{
+			"Name": "observation-about-zombies",
+			"StartIn": "be-careful",
+			"EndIn": "controls-tutorial",
+			"DialogNodes": [
+				{
+					"ID": "be-careful",
+					"Title": "Você",
+					"Text": "Tenho que tomar cuidado com essas coisas. Um vacilo, e tudo vai pelo ralo.",
+					"Options": []
+				}
+			]
+		},
+		{
+			"Name": "tv-interaction",
+			"StartIn": "tv-is-off",
+			"EndIn": "tv-is-off",
+			"DialogNodes": [
+				{
+					"ID": "tv-is-off",
+					"Title": "Você",
+					"Text": "A televisão está desligada.",
+					"Options": []
+				}
+			]
+		},
+		{
+			"Name": "shelf-interaction",
+			"StartIn": "shelf-is-empty",
+			"EndIn": "shelf-is-empty",
+			"DialogNodes": [
+				{
+					"ID": "shelf-is-empty",
+					"Title": "Você",
+					"Text": "A estante está vazia.",
+					"Options": []
+				}
+			]
+		}
+	]
+}

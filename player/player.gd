@@ -1,6 +1,7 @@
 extends CharacterBody2D
-
 class_name Player
+
+signal interaction
 
 const SPEED = 300.0
 
@@ -50,6 +51,10 @@ func _physics_process(_delta: float) -> void:
 	# 🔫 Disparo com cooldown
 	if Input.is_action_pressed("shoot") and bullet_scene and alive and can_shoot:
 		shoot()
+	
+	if Input.is_action_just_pressed("interaction") and alive:
+		print_debug("player interagiu")
+		interaction.emit()
 
 func shoot() -> void:
 	can_shoot = false
