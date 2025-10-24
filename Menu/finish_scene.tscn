@@ -1,6 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://bgwo5wifg20re"]
+[gd_scene load_steps=2 format=3 uid="uid://cp5kcii7d2ud"]
 
-[ext_resource type="Script" uid="uid://dy7s7v06npsxm" path="res://Menu/game_over.gd" id="1_w543w"]
+[ext_resource type="Script" uid="uid://cs2lmwkr54jhe" path="res://Menu/finish.gd" id="1_hitnk"]
 
 [node name="GameOver" type="Control"]
 layout_mode = 3
@@ -9,7 +9,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_w543w")
+script = ExtResource("1_hitnk")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1
@@ -32,7 +32,7 @@ offset_right = 20.0
 offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
-text = "Game Over!"
+text = "Thanks for playing! XDD"
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 1
