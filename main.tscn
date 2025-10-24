@@ -1,5 +1,6 @@
-[gd_scene load_steps=114 format=4 uid="uid://cjee6x54wvfd2"]
+[gd_scene load_steps=116 format=4 uid="uid://cjee6x54wvfd2"]
 
+[ext_resource type="Script" uid="uid://cqpbyatag0d8s" path="res://main.gd" id="1_1vm84"]
 [ext_resource type="Texture2D" uid="uid://bg5xyhkvpqpf8" path="res://sprites/zombie-tds-tilesets-soil-stones-plants-water-destroyed-cars/Tiles&Details/PNG/Ground_tiles/ground_tiles_0000_Layer-50.png" id="1_g52lx"]
 [ext_resource type="Texture2D" uid="uid://dr8fj5ecf1w5r" path="res://sprites/zombie-tds-tilesets-soil-stones-plants-water-destroyed-cars/Objects/PNG/Objects_outside/objects_outside_0008_Layer-9.png" id="1_nrq6j"]
 [ext_resource type="Texture2D" uid="uid://44g35f0o8af0" path="res://sprites/zombie-tds-tilesets-soil-stones-plants-water-destroyed-cars/Tiles&Details/PNG/Ground_tiles/ground_tiles_0001_Layer-49.png" id="2_0lped"]
@@ -67,6 +68,7 @@
 [ext_resource type="Texture2D" uid="uid://c8rv5iywytcu5" path="res://sprites/zombie-tds-tilesets-buildings-and-furniture/Objects/PNG/objects_house_0021_Layer-22.png" id="65_kkkcx"]
 [ext_resource type="PackedScene" uid="uid://duymqadydwp6v" path="res://luz.tscn" id="66_uatky"]
 [ext_resource type="PackedScene" uid="uid://d5b6pkb7ebxp" path="res://dialog_system/components/dialog_trigger.tscn" id="67_1vm84"]
+[ext_resource type="AudioStream" uid="uid://mwnaicqnl2yf" path="res://musicas/Shadows Whisper.mp3" id="67_rqtf5"]
 [ext_resource type="PackedScene" uid="uid://cqfmh3gsroshc" path="res://dialog_system/components/dialog_handler.tscn" id="68_wu3dr"]
 [ext_resource type="PackedScene" uid="uid://c83mrkppqekr0" path="res://dialog_system/view/dialog_view.tscn" id="69_wu3dr"]
 [ext_resource type="PackedScene" uid="uid://b7wtixm5w6nvh" path="res://dialog_system/components/dialog_manager.tscn" id="70_cyx1q"]
@@ -3783,6 +3785,7 @@ size = Vector2(160, 360.5)
 size = Vector2(197, 127)
 
 [node name="Tutorial" type="Node2D"]
+script = ExtResource("1_1vm84")
 
 [node name="TileMapLayer2" type="TileMapLayer" parent="."]
 position = Vector2(8, 2)
@@ -4262,6 +4265,14 @@ position = Vector2(-191, -130)
 
 [node name="Camera2D" type="Camera2D" parent="player"]
 position = Vector2(0, 19.999998)
+
+[node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="player"]
+position = Vector2(-147.49997, 279.99994)
+scale = Vector2(2.4999995, 2.4999995)
+stream = ExtResource("67_rqtf5")
+volume_db = 0.106
+attenuation = 15.999971
+parameters/looping = false
 
 [node name="luz" parent="." instance=ExtResource("66_uatky")]
 position = Vector2(-57.999996, -121)

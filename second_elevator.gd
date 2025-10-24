@@ -24,7 +24,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 			isBeingCalled = true
 			$Timer.start()
 		elif arrived:
-			var video_url = "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+			var video_url = "https://www.youtube.com/watch?v=dQw4w9WgXcQ&autoplay=1"
 			OS.shell_open(video_url)
 			get_tree().change_scene_to_file("res://Menu/finish_scene.tscn")
 

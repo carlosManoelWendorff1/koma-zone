@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://mwnaicqnl2yf"
+path="res://.godot/imported/Shadows Whisper.mp3-a9559cd6b4b77fda7aa5458675147e54.mp3str"
+
+[deps]
+
+source_file="res://musicas/Shadows Whisper.mp3"
+dest_files=["res://.godot/imported/Shadows Whisper.mp3-a9559cd6b4b77fda7aa5458675147e54.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

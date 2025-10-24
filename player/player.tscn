@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://dchin36ajh5mm"]
+[gd_scene load_steps=26 format=3 uid="uid://dchin36ajh5mm"]
 
 [ext_resource type="Script" uid="uid://ucdklys53f8b" path="res://player/player.gd" id="1_rkbax"]
 [ext_resource type="Script" uid="uid://cv7rm1bnmfbs" path="res://scripts/hurtbox.gd" id="4_yw30f"]
@@ -19,6 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://1wd6f70727v2" path="res://sprites/zombie-tds-main-characters/Characters/PNG_Bodyparts&Animations/PNG Animations/Man/Walk_gun/Walk_gun_002.png" id="19_q28gw"]
 [ext_resource type="Texture2D" uid="uid://1gf5i6ny5yg4" path="res://sprites/zombie-tds-main-characters/Characters/PNG_Bodyparts&Animations/PNG Animations/Man/Walk_gun/Walk_gun_003.png" id="20_ge24q"]
 [ext_resource type="Texture2D" uid="uid://bkndovqqhjpg2" path="res://sprites/zombie-tds-main-characters/Characters/PNG_Bodyparts&Animations/PNG Animations/Man/Walk_gun/Walk_gun_004.png" id="21_pnw6m"]
+[ext_resource type="AudioStream" uid="uid://l28bov01e0e6" path="res://musicas/gunshot_06.mp3" id="21_x7c3f"]
 [ext_resource type="Texture2D" uid="uid://bopgmy0nynln5" path="res://sprites/zombie-tds-main-characters/Characters/PNG_Bodyparts&Animations/PNG Animations/Man/Walk_gun/Walk_gun_005.png" id="22_1so5t"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bjvpn"]
@@ -154,3 +155,7 @@ position = Vector2(0, -1)
 rotation = 3.1415927
 sprite_frames = SubResource("SpriteFrames_55jnj")
 animation = &"idle_gun"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("21_x7c3f")
+volume_db = -14.198
