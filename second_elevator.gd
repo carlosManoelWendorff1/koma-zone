@@ -5,7 +5,7 @@ extends Node2D
 
 func _ready() -> void:
 	# Define o tempo do timer para 60 segundos
-	$Timer.wait_time = 60
+	$Timer.wait_time = 10
 	$Timer.one_shot = true
 	$Label.text = "Elevador chegará em 60s"
 
@@ -24,7 +24,9 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 			isBeingCalled = true
 			$Timer.start()
 		elif arrived:
-			print("go to final")
+			var video_url = "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+			OS.shell_open(video_url)
+			get_tree().change_scene_to_file("res://Menu/finish_scene.tscn")
 
 func _on_timer_timeout() -> void:
 	isBeingCalled = false
