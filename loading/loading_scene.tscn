@@ -1,0 +1,46 @@
+[gd_scene load_steps=4 format=3 uid="uid://3em41jiebe1j"]
+
+[ext_resource type="Script" uid="uid://bvnsng51am4xw" path="res://loading/loading_scene.gd" id="1_ippwy"]
+
+[sub_resource type="Gradient" id="Gradient_ue7e6"]
+colors = PackedColorArray(0, 0, 0, 1, 0.012617188, 0.012617188, 0.012617188, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_fk36s"]
+gradient = SubResource("Gradient_ue7e6")
+
+[node name="LoadingScene" type="CanvasLayer"]
+script = ExtResource("1_ippwy")
+next_scene_path = "uid://dfaapmnhc287b"
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+
+[node name="TextureRect" type="TextureRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_fk36s")
+
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Loading..."
