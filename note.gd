@@ -39,7 +39,7 @@ func _read_note():
 	_current_dialog += 1
 
 func _close_note(_arg):
-	print_debug("Close note")
-	_dialog_manager.end_dialog()
-	_dialog_started = false
-	_current_dialog = 0
+	if _arg.get_parent().name.to_lower() == "player":
+		_dialog_manager.end_dialog()
+		_dialog_started = false
+		_current_dialog = 0
